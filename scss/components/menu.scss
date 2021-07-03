@@ -1,0 +1,71 @@
+.menu {
+	&-compact {
+		width: 100%;
+		background-color: $menu-color;
+		display: block;
+		%hamburger {
+			width: 50px;
+			height: 50px;
+			float: right;
+			display:flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			margin: 2%;
+			margin-right: 5%;
+		}
+		&-hamburger {
+			@extend %hamburger;
+			&_close, &:hover {
+				@extend %hamburger;
+				[class*=item] {
+					&:nth-child(1) {
+						transform: rotate(-45deg) scale(0.5, 1) translate(2px, 12px);
+					}
+					&:nth-child(2) { transform: rotate(45deg); }
+					&:nth-child(3) {
+						transform: rotate(-45deg) scale(0.5, 1) translate(-2px, -11px);
+
+					}
+				}
+			}
+		}
+		&-item {
+			background: $menu-item-color;
+			width: 80%;
+			height: 15%;
+			border-radius: 5%/50%;
+			box-shadow: inset $default-shadow;
+			transition-property: transform, opacity;
+			transition-duration: .75s;
+		}
+	}
+	&-uncompact {
+		$class: str-slice("#{&}", 2);
+		@at-root {
+		[class^=#{$class}] {
+			position:absolute;
+			top:100%;
+			right:0;
+			width: 66%;
+			&[class*="--hidden"] {
+				@extend #{&};
+				right: -100%;
+			}
+			
+		}}
+		&>ul {
+			background-color: $background-ligth;
+			box-shadow: $default-shadow;
+		}
+		&-item {
+			margin: 1% 0;
+			background-color:$background;
+			padding: 3%;
+			text-align:center;
+			box-shadow: inset $default-shadow;
+			$p: str-slice("#{&}", 2);
+			//@at-root { [class*="#{$p}--ligth"] { background-color: $background-ligth; }}
+		}
+	}
+}
