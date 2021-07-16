@@ -16,7 +16,7 @@
 		}
 		&-hamburger {
 			@extend %hamburger;
-			&_close, &:hover {
+			&[state="close"], &:hover {
 				@extend %hamburger;
 				[class*=item] {
 					&:nth-child(1) {
@@ -39,33 +39,49 @@
 			transition-property: transform, opacity;
 			transition-duration: .75s;
 		}
+		@include media(650px) {
+			 display: none;
+		}
 	}
 	&-uncompact {
 		$class: str-slice("#{&}", 2);
+		@include media(0px, $tablet) {
+			position: absolute;
+			right: 0%;
+			display: block;
+			width: 44%;
+		}
 		@at-root {
-		[class^=#{$class}] {
-			position:absolute;
-			top:100%;
-			right:0;
-			width: 66%;
-			&[class*="--hidden"] {
-				@extend #{&};
-				right: -100%;
+			&--hidden {
+				@extend .#{$class};
+				@include media(0px, 650px) {
+					right: -100%;
+				}
 			}
-			
-		}}
+		}
 		&>ul {
 			background-color: $background-ligth;
 			box-shadow: $default-shadow;
+			width: 100%;
+			@include media(650px) {
+				background-color: $menu-color;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+			}
+
 		}
 		&-item {
-			margin: 1% 0;
-			background-color:$background;
-			padding: 3%;
-			text-align:center;
-			box-shadow: inset $default-shadow;
-			$p: str-slice("#{&}", 2);
-			//@at-root { [class*="#{$p}--ligth"] { background-color: $background-ligth; }}
+				background-color:$background;
+				padding: 3%;
+				text-align:center;
+				box-shadow: inset $default-shadow;
+			@include media(0px, $tablet) {
+				margin: 1% 0;
+			}
+			@include media(650px) {
+				padding: 2% 6%;
+			}
 		}
 	}
 }

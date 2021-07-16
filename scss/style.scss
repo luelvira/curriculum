@@ -1,6 +1,7 @@
 @import 'colors.scss';
 @import 'mixing.scss';
 @import 'components/menu.scss';
+@import 'components/body.scss';
 * {
 	margin: 0;
 	padding: 0;
@@ -88,10 +89,16 @@ ul[class^=ul] {
 		transition-timing-function: ease-in-out;
 		&[class*=_dot] {
 			padding: 0 6%;
-			@include after(20px, 20px, 14%, -8.6%) {
+			@include after(20px, 20px, 14%, -23px) {
 				border: 5px solid $primary-color;
 				border-radius: 50%;
 				background-color: $background-ligth;
+				@include media(550px) {
+					left: -28px;
+				}
+				@include media(650px) {
+					left: -24px;
+				}
 			}
 			&[class*=--active]:after {
 				background-color: $primary-color;
@@ -137,13 +144,15 @@ header {
 	width: 100%;
 	background-color: $background;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	padding-top: 10%;
 	box-shadow: $default-shadow;
 	position:relative;
-	margin-bottom: 3%;
+	@include media(0, $tablet) {
+		margin-bottom: 3%;
+		flex-direction: column;
+	}
 	.profile {
 		width: 60%;
 		height: 60vw;
@@ -151,6 +160,8 @@ header {
 		overflow: hidden;
 		box-shadow: 7px 7px 7px $shadow-color, -7px -7px 7px $shadow-color;
 		margin-bottom: 10%;
+		max-width: 200px;
+		max-height: 200px;
 		img {
 			object-position: center center;
 		}

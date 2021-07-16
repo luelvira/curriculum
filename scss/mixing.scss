@@ -1,36 +1,36 @@
-	@mixin after($width:100%, $height: $width, $top: 0, $left: 0) {
-		position: relative;
-		&:after {
-			content: " ";
-			position: absolute;
-			width: $width;
-			height: $height;
-			top: $top;
-			left: $left;
-			@content;
-		}
+@mixin after($width:100%, $height: $width, $top: 0, $left: 0) {
+	position: relative;
+	&:after {
+		content: " ";
+		position: absolute;
+		width: $width;
+		height: $height;
+		top: $top;
+		left: $left;
+		@content;
 	}
+}
 
-	@mixin margin($initial, $iter, $iter2, $incr) {
-		margin: $initial;
-		@for $y from 0 to $iter {
-			&[class*=--margin#{$y}x] {
-				margin: $initial*$y;
-				@for $x from 0 to $iter {
-					&[class*=--margin#{$y}x-#{$x}x] {
-						margin: $initial*$y $initial*$x;
-						@for $d from 1 to $iter2 {
-							&[class*="--marginx#{$y}-#{x}.#{$d}x"] {
-								margin: $initial*$y $initial*($x+($d*$incr));
-							}
+@mixin margin($initial, $iter, $iter2, $incr) {
+	margin: $initial;
+	@for $y from 0 to $iter {
+		&[class*=--margin#{$y}x] {
+			margin: $initial*$y;
+			@for $x from 0 to $iter {
+				&[class*=--margin#{$y}x-#{$x}x] {
+					margin: $initial*$y $initial*$x;
+					@for $d from 1 to $iter2 {
+						&[class*="--marginx#{$y}-#{x}.#{$d}x"] {
+							margin: $initial*$y $initial*($x+($d*$incr));
 						}
 					}
 				}
 			}
-			@for $d from 0 to $iter2 {
-				&[class*="--marginx#{$y}.#{$d}x"] {
-					margin: $initial*($y+($d*$incr));
-					@for $x from 0 to $iter {
+		}
+		@for $d from 0 to $iter2 {
+			&[class*="--marginx#{$y}.#{$d}x"] {
+				margin: $initial*($y+($d*$incr));
+				@for $x from 0 to $iter {
 					&[class*=--margin#{$y}x-#{$x}x] {
 						margin: $initial*($y+($d*$incr)) $initial*$x;
 						@for $dd from 1 to 4 {
@@ -41,6 +41,18 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+@mixin media($min, $max:0) {
+	@if $max!=0 {
+		@media only screen and (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	} @else {
+		@media only screen and (min-width: $min) {
+			@content;
 		}
 	}
 }
