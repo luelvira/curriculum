@@ -79,9 +79,8 @@
 			@include media(0px, $tablet) {
 				margin: 1% 0;
 			}
-			@include media(650px) {
-				padding: 2% 6%;
-			}
+			@include media($tablet, $desktop) { padding: 2% 6%; }
+			@include media($desktop) { padding: 1% 6%; }
 		}
 	}
 }
