@@ -1,0 +1,71 @@
+header {
+	width: 100%;
+	background-color: $background;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	//box-shadow: $default-shadow;
+	//position:relative;
+	@include media(0, $tablet) {
+		padding-top: 10%;
+		margin-bottom: 3%;
+		flex-direction: column;
+	}
+	@include media($tablet) {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 2% 0%;
+	}
+	.profile {
+		width: 60%;
+		height: 60vw;
+		border-radius: 50%;
+		overflow: hidden;
+		box-shadow: 7px 7px 7px $shadow-color, -7px -7px 7px $shadow-color;
+		max-width: 200px;
+		max-height: 200px;
+		img {
+			object-position: center center;
+		}
+		@include media(0px, $tablet) {
+			margin-bottom: 10%;
+		}
+		@include media($tablet) {
+			max-width: 150px;
+			max-height: 150px;
+			margin-right: 20%;
+		}
+	}
+	h1 {
+		margin: 0;
+		@include media(0px, $tablet) {
+			margin-bottom: 10%;
+			width: 93%;
+		}
+		@include media($tablet) {
+			width: 50%;
+		}
+		@include media($desktop) {
+			width: 30%;
+ 	   	}
+		.name {
+			font-weight: 400;
+			color: $primary-color;
+		}
+		.job-title {
+			font-weight: bold;
+		}
+	}
+	.particle {
+		$size: 6px;
+		position: absolute;
+		top: random(100) * 1%;
+		left: random(100) * 1%;
+		background-color: grayscale(rgb(random(255), random(255), random(255)));
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+	}
+}
+
