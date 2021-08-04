@@ -7,7 +7,7 @@ window.onload = function() {
 	const menuCompact = document.getElementsByClassName("menu-compact")[0];
 	const callback = changeColor(works);
 	const menuItems = new Array(...document.getElementsByClassName("menu-uncompact-item"));
-	const validPaths = ["/", "/works", "/contact"];
+	const validPaths = ["/", "/skills", "/works", "/contact"];
 
 	const index = validPaths.indexOf(window.location.pathname.split(".")[0]);
 	if (0<= index && index < menuItems.length) menuItems[index].classList.add("active");

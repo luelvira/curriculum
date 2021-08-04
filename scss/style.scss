@@ -15,6 +15,17 @@ li {
 
 img {
 	width: 100%;
+	&.img-xxxs { width: 4%; }
+	&.img-xxs { width: 10%; }
+	&.img-xs { width: 20%; }
+	&.img-s { width: 30%; }
+	&.img-sm { width: 40%; }
+	&.img-m { width: 50%; }
+	&.img-lm { width: 54%; }
+	&.img-l { width: 70%; }
+	&.img-xl { width: 80%; }
+	&.img-xxl { width: 90%; }
+	&.img-xxxl { width: 96%; }
 }
 body, .wrapp {
     background-color: $background-ligth;
@@ -51,6 +62,10 @@ body, .wrapp {
 				left: 20%;
 				top: 0;
 				z-index: -1;
+			}
+			&[class*=--big]:after {
+				width: 80%;
+				left:10%;
 			}
 		}
 		@if $i == 1 {
@@ -94,6 +109,14 @@ ul[class^=ul] {
 			border-color: $primary-color;
 			border-width: 5px;
 		}
+	}
+	&[class*=_1]  .li{
+		font-size: 14pt;
+		margin-top: 3%;
+	}
+	&[class*=_2] .li {
+		font-size: 12pt;
+		margin-top: inherit;
 	}
 	
 	li[class^=li] {
@@ -178,4 +201,9 @@ main {
 		margin: 1% auto 0 auto;
 	}
 }
+
+
+
+
+
 @import './components/contact';
