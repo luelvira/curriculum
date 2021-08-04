@@ -1,7 +1,7 @@
 ul.contact {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px 0;
 	li a{
 		display:flex;
 		flex-direction: column;
@@ -12,5 +12,8 @@ ul.contact {
 			margin-bottom: 10%;
 			font-size: 3em;
 		}
+	}
+	@include media($desktop) {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }

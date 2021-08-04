@@ -53,6 +53,7 @@ body, .wrapp {
 			color: $background-ligth;
 			position:relative;
 			display:block;
+			z-index:1;
 			&:after {
 				content: " ";
 				position:absolute;
@@ -66,6 +67,10 @@ body, .wrapp {
 			&[class*=--big]:after {
 				width: 80%;
 				left:10%;
+			}
+			&[class*=--bigger]:after {
+				width: 90%;
+				left:5%;
 			}
 		}
 		@if $i == 1 {
@@ -192,6 +197,7 @@ a[class^=link] {
 }
 
 @import './components/header';
+/*
 main {
 	@include media(0, $desktop) {
 		padding: 2%;
@@ -201,6 +207,7 @@ main {
 		margin: 1% auto 0 auto;
 	}
 }
+*/
 
 
 
