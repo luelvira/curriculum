@@ -1,17 +1,50 @@
-$background: #C7C7C7;
-$background-ligth: #f5f5f5;
-$primary-color: #287067;
-$action-color: #21d5be;
-$shadow-color:rgba(#3e3e3e, 0.4);
-$menu-color: #6a6a6a;
-$menu-item-color: #f0f0f0;
+:root {
+	$background: #c7c7c7;
+	$background-ligth: #f5f5f5;
+	$primary-color: #287067;
+	$action-color: #21d5be;
+	$shadow-color:rgba(#3e3e3e, 0.4);
+	$menu-color: #6a6a6a;
+	$menu-item-color: #f0f0f0;
+	$background-ligth-darken:  darken($background-ligth, 10%);
+	$action-color-ligthen: lighten($action-color, 5%);
+	$background-ligth-rgba: rgba($background-ligth, 80%);
+	$gray-font-color: darken(#fff, 65%);
+	$gray-ligth-font-color: darken(#fff, 35%);
+
+	--background: #{$background};
+	--background-ligth: #{$background-ligth};
+	--primary-color: #{$primary-color};
+	--action-color: #{$action-color};
+	--shadow-color: #{$shadow-color};
+	--menu-color: #{$menu-color};
+	--menu-item-color: #{$menu-item-color};
+
+	--background-ligth-darken:  #{$background-ligth-darken};
+	--action-color-ligthen: #{$action-color-ligthen};
+	--background-ligth-rgba: #{$background-ligth-rgba};
+	--gray-font-color: #{$gray-font-color};
+	--gray-ligth-font-color: #{$gray-ligth-font-color};
+
+}
+$background: var(--background);
+$background-ligth: var(--background-ligth);
+$primary-color: var(--primary-color);
+$action-color: var(--action-color);
+$shadow-color:var(--shadow-color);
+$menu-color: var(--menu-color);
+$menu-item-color: var(--menu-item-color);
+$background-ligth-darken: var(--background-ligth-darken);
+$action-color-ligthen: var(--action-color-ligthen);
+$background-ligth-rgba: var(--background-ligth-rgba);
+$gray-font-color: var(--gray-font-color);
+$gray-ligth-font-color: var(--gray-ligth-font-color);
 
 $font: 'Lato';
 $default-shadow: 0px 3px 3px $shadow-color;
 $default-intense-shadow: 4px 4px 7px $shadow-color, 0px 0px 3px $shadow-color;
 
+
 $time: .75s;
-
-
 $tablet: 650px;
 $desktop: 960px;

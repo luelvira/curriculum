@@ -28,6 +28,7 @@ img {
 	&.img-xxl { width: 90%; }
 	&.img-xxxl { width: 96%; }
 }
+
 body, .wrapp {
     background-color: $background-ligth;
 	background: $background-ligth no-repeat url("../media/background.jpg") fixed;
@@ -43,7 +44,7 @@ body, .wrapp {
 	font: normal 900 24px $font;
 }
 
-@for $i from 1 through 6 {
+@for $i from 1 through 3 {
 	[class^=h#{$i}] {
 		@extend %header;
 		font-weight: 900/(6-$i);
@@ -124,14 +125,16 @@ body, .wrapp {
 		font-size: 12pt;
 		margin-top: inherit;
 	}
-}
-ul[class^=ul] {
-	@extend %list;
 	li[class^=li] {
 		@include margin(1%, 5,3,0.5);
 		transition-property: background-color, padding, box-shadow;
 		transition-duration: $time;
 		transition-timing-function: ease-in-out;
+	}
+}
+ul[class^=ul] {
+	@extend %list;
+	li[class^=li] {
 		&[class*=_dot] {
 			padding: 0 6%;
 			@include after(20px, 20px, 14%, -23px) {
@@ -167,7 +170,7 @@ ul[class^=ul] {
 			}
 		}
 		&.active {
-			background-color: darken($background-ligth, 10);
+			background-color: $background-ligth-darken;
 			box-shadow: $default-shadow;
 			padding: 6%;
 			.description{
@@ -185,6 +188,13 @@ ul[class^=ul] {
 
 ol[class^=ol] {
 	@extend %list;
+	&>li[class^=li] {
+		list-style: decimal;
+		padding-left: 1%;
+		&::marker {
+			color: $gray-ligth-font-color;
+		}
+	}
 }
 
 a[class^=link] {
@@ -192,7 +202,7 @@ a[class^=link] {
 	color: $action-color;
 	position: relative;
 	&:after {
-		content: " ";
+		content: "";
 		position: absolute;
 		background-color: $action-color;
 		width: 100%;
@@ -224,8 +234,8 @@ a[class^=link] {
 		transition-property: background-color, box-shadow, transform, color;
 		transition-duration: .75s;
 		&:hover {
-			background-color: lighten($action-color, 5%);
-			color: darken(white, 65%);
+			background-color: $action-color-ligthen;
+			color: $gray-font-color;
 			box-shadow: 1px 5px 3px $shadow-color;
 			transform:scale(1.03);
 		}

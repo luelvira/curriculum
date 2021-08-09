@@ -1,6 +1,20 @@
+:root {
+  --background: #c7c7c7;
+  --background-ligth: #f5f5f5;
+  --primary-color: #287067;
+  --action-color: #21d5be;
+  --shadow-color: rgba(62, 62, 62, 0.4);
+  --menu-color: #6a6a6a;
+  --menu-item-color: #f0f0f0;
+  --background-ligth-darken: gainsboro;
+  --action-color-ligthen: #30dfc9;
+  --background-ligth-rgba: rgba(245, 245, 245, 0.8);
+  --gray-font-color: #595959;
+  --gray-ligth-font-color: #a6a6a6; }
+
 .menu-compact {
   width: 100%;
-  background-color: #6a6a6a;
+  background-color: var(--menu-color);
   display: block; }
   .menu-compact .menu-compact-hamburger {
     width: 50px;
@@ -19,11 +33,11 @@
   .menu-compact-hamburger[state="close"] [class*=item]:nth-child(3), .menu-compact-hamburger:hover [class*=item]:nth-child(3) {
     transform: rotate(-45deg) scale(0.5, 1) translate(-2px, -11px); }
   .menu-compact-item {
-    background: #f0f0f0;
+    background: var(--menu-item-color);
     width: 80%;
     height: 15%;
     border-radius: 5%/50%;
-    box-shadow: inset 0px 3px 3px rgba(62, 62, 62, 0.4);
+    box-shadow: inset 0px 3px 3px var(--shadow-color);
     transition-property: transform, opacity;
     transition-duration: .75s; }
   @media only screen and (min-width: 650px) {
@@ -42,19 +56,19 @@
   .menu-uncompact--hidden {
     right: -100%; } }
 .menu-uncompact > ul, .menu-uncompact--hidden > ul {
-  background-color: #f5f5f5;
-  box-shadow: 0px 3px 3px rgba(62, 62, 62, 0.4);
+  background-color: var(--background-ligth);
+  box-shadow: 0px 3px 3px var(--shadow-color);
   width: 100%; }
   @media only screen and (min-width: 650px) {
     .menu-uncompact > ul, .menu-uncompact--hidden > ul {
-      background-color: #6a6a6a;
+      background-color: var(--menu-color);
       display: flex;
       flex-direction: row;
       justify-content: space-around; } }
 .menu-uncompact-item {
-  background-color: #C7C7C7;
+  background-color: var(--background);
   text-align: center;
-  box-shadow: inset 0px 3px 3px rgba(62, 62, 62, 0.4), 0px 0px 0px rgba(62, 62, 62, 0.4);
+  box-shadow: inset 0px 3px 3px var(--shadow-color), 0px 0px 0px var(--shadow-color);
   display: flex; }
   @media only screen and (min-width: 0px) and (max-width: 650px) {
     .menu-uncompact-item {
@@ -69,12 +83,12 @@
       transition-duration: .75s;
       transition-timing-function: ease-in-out; }
       .menu-uncompact-item:hover {
-        box-shadow: inset 0px 0px 0px rgba(62, 62, 62, 0.4), 4px 4px 7px rgba(62, 62, 62, 0.4), 0px 0px 3px rgba(62, 62, 62, 0.4); } }
+        box-shadow: inset 0px 0px 0px var(--shadow-color), 4px 4px 7px var(--shadow-color), 0px 0px 3px var(--shadow-color); } }
   .menu-uncompact-item.active {
-    color: #287067;
+    color: var(--primary-color);
     font-weight: 900;
-    background-color: #f5f5f5;
-    box-shadow: inset 0px 0px 0px rgba(62, 62, 62, 0.4), 4px 4px 7px rgba(62, 62, 62, 0.4), 0px 0px 3px rgba(62, 62, 62, 0.4); }
+    background-color: var(--background-ligth);
+    box-shadow: inset 0px 0px 0px var(--shadow-color), 4px 4px 7px var(--shadow-color), 0px 0px 3px var(--shadow-color); }
   .menu-uncompact-item a {
     width: 100%;
     padding: 6% 0;
@@ -86,8 +100,8 @@ section {
   display: block;
   margin: 2% auto;
   max-width: 400px;
-  background-color: rgba(245, 245, 245, 0.8);
-  box-shadow: 4px 4px 7px rgba(62, 62, 62, 0.4), 0px 0px 3px rgba(62, 62, 62, 0.4);
+  background-color: var(--background-ligth-rgba);
+  box-shadow: 4px 4px 7px var(--shadow-color), 0px 0px 3px var(--shadow-color);
   padding: 2%;
   padding-top: 0%;
   position: relative; }
@@ -164,8 +178,8 @@ img {
     width: 96%; }
 
 body, .wrapp {
-  background-color: #f5f5f5;
-  background: #f5f5f5 no-repeat url("../media/background.jpg") fixed;
+  background-color: var(--background-ligth);
+  background: var(--background-ligth) no-repeat url("../media/background.jpg") fixed;
   overflow-x: hidden;
   position: relative;
   z-index: -2; }
@@ -173,7 +187,7 @@ body, .wrapp {
 .hidden {
   display: none; }
 
-[class^=h1], [class^=h2], [class^=h3], [class^=h4], [class^=h5], [class^=h6] {
+[class^=h1], [class^=h2], [class^=h3] {
   font: normal 900 24px "Lato"; }
 
 [class^=h1] {
@@ -184,14 +198,14 @@ body, .wrapp {
     font-weight: 600; }
   [class^=h1][class*=--underline] {
     text-decoration: none;
-    color: #f5f5f5;
+    color: var(--background-ligth);
     position: relative;
     display: block;
     z-index: 1; }
     [class^=h1][class*=--underline]:after {
       content: " ";
       position: absolute;
-      background-color: #287067;
+      background-color: var(--primary-color);
       width: 60%;
       height: 100%;
       left: 20%;
@@ -212,14 +226,14 @@ body, .wrapp {
     font-weight: 600; }
   [class^=h2][class*=--underline] {
     text-decoration: none;
-    color: #f5f5f5;
+    color: var(--background-ligth);
     position: relative;
     display: block;
     z-index: 1; }
     [class^=h2][class*=--underline]:after {
       content: " ";
       position: absolute;
-      background-color: #287067;
+      background-color: var(--primary-color);
       width: 60%;
       height: 100%;
       left: 20%;
@@ -248,14 +262,14 @@ body, .wrapp {
     font-weight: 600; }
   [class^=h3][class*=--underline] {
     text-decoration: none;
-    color: #f5f5f5;
+    color: var(--background-ligth);
     position: relative;
     display: block;
     z-index: 1; }
     [class^=h3][class*=--underline]:after {
       content: " ";
       position: absolute;
-      background-color: #287067;
+      background-color: var(--primary-color);
       width: 60%;
       height: 100%;
       left: 20%;
@@ -275,90 +289,6 @@ body, .wrapp {
     [class^=h3] {
       margin-top: 2%;
       margin-bottom: 1.5%; } }
-
-[class^=h4] {
-  font-weight: 450; }
-  [class^=h4][class*=--center] {
-    text-align: center; }
-  [class^=h4][class*=_bold] {
-    font-weight: 600; }
-  [class^=h4][class*=--underline] {
-    text-decoration: none;
-    color: #f5f5f5;
-    position: relative;
-    display: block;
-    z-index: 1; }
-    [class^=h4][class*=--underline]:after {
-      content: " ";
-      position: absolute;
-      background-color: #287067;
-      width: 60%;
-      height: 100%;
-      left: 20%;
-      top: 0;
-      z-index: -1; }
-    [class^=h4][class*=--underline][class*=--big]:after {
-      width: 80%;
-      left: 10%; }
-    [class^=h4][class*=--underline][class*=--bigger]:after {
-      width: 90%;
-      left: 5%; }
-
-[class^=h5] {
-  font-weight: 900; }
-  [class^=h5][class*=--center] {
-    text-align: center; }
-  [class^=h5][class*=_bold] {
-    font-weight: 600; }
-  [class^=h5][class*=--underline] {
-    text-decoration: none;
-    color: #f5f5f5;
-    position: relative;
-    display: block;
-    z-index: 1; }
-    [class^=h5][class*=--underline]:after {
-      content: " ";
-      position: absolute;
-      background-color: #287067;
-      width: 60%;
-      height: 100%;
-      left: 20%;
-      top: 0;
-      z-index: -1; }
-    [class^=h5][class*=--underline][class*=--big]:after {
-      width: 80%;
-      left: 10%; }
-    [class^=h5][class*=--underline][class*=--bigger]:after {
-      width: 90%;
-      left: 5%; }
-
-[class^=h6] {
-  font-weight: Infinity; }
-  [class^=h6][class*=--center] {
-    text-align: center; }
-  [class^=h6][class*=_bold] {
-    font-weight: 600; }
-  [class^=h6][class*=--underline] {
-    text-decoration: none;
-    color: #f5f5f5;
-    position: relative;
-    display: block;
-    z-index: 1; }
-    [class^=h6][class*=--underline]:after {
-      content: " ";
-      position: absolute;
-      background-color: #287067;
-      width: 60%;
-      height: 100%;
-      left: 20%;
-      top: 0;
-      z-index: -1; }
-    [class^=h6][class*=--underline][class*=--big]:after {
-      width: 80%;
-      left: 10%; }
-    [class^=h6][class*=--underline][class*=--bigger]:after {
-      width: 90%;
-      left: 5%; }
 
 ul[class^=ul], ol[class^=ol] {
   margin: 1%; }
@@ -3453,7 +3383,7 @@ ul[class^=ul], ol[class^=ol] {
   ul[class*=_border][class*=_border_all][class^=ul], ol[class*=_border][class*=_border_all][class^=ol] {
     border: 1px solid black; }
   ul[class*=_border][class*=--primary][class^=ul], ol[class*=_border][class*=--primary][class^=ol] {
-    border-color: #287067;
+    border-color: var(--primary-color);
     border-width: 5px; }
   ul[class*=_1][class^=ul] .li, ol[class*=_1][class^=ol] .li {
     font-size: 14pt;
@@ -3461,862 +3391,868 @@ ul[class^=ul], ol[class^=ol] {
   ul[class*=_2][class^=ul] .li, ol[class*=_2][class^=ol] .li {
     font-size: 12pt;
     margin-top: inherit; }
-
-ul[class^=ul] li[class^=li] {
-  margin: 1%;
-  transition-property: background-color, padding, box-shadow;
-  transition-duration: 0.75s;
-  transition-timing-function: ease-in-out; }
-  ul[class^=ul] li[class^=li][class*=--margin0x] {
-    margin: 0%; }
-    ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-0x] {
-      margin: 0% 0%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-0x][class*="--marginx0-x.1x"] {
-        margin: 0% 0.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-0x][class*="--marginx0-x.2x"] {
+  ul[class^=ul] li[class^=li], ol[class^=ol] li[class^=li] {
+    margin: 1%;
+    transition-property: background-color, padding, box-shadow;
+    transition-duration: 0.75s;
+    transition-timing-function: ease-in-out; }
+    ul[class^=ul] li[class^=li][class*=--margin0x], ol[class^=ol] li[class^=li][class*=--margin0x] {
+      margin: 0%; }
+      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-0x], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-0x] {
+        margin: 0% 0%; }
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-0x][class*="--marginx0-x.1x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-0x][class*="--marginx0-x.1x"] {
+          margin: 0% 0.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-0x][class*="--marginx0-x.2x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-0x][class*="--marginx0-x.2x"] {
+          margin: 0% 1%; }
+      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-1x], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-1x] {
         margin: 0% 1%; }
-    ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-1x] {
-      margin: 0% 1%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-1x][class*="--marginx0-x.1x"] {
-        margin: 0% 1.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-1x][class*="--marginx0-x.2x"] {
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-1x][class*="--marginx0-x.1x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-1x][class*="--marginx0-x.1x"] {
+          margin: 0% 1.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-1x][class*="--marginx0-x.2x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-1x][class*="--marginx0-x.2x"] {
+          margin: 0% 2%; }
+      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-2x], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-2x] {
         margin: 0% 2%; }
-    ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-2x] {
-      margin: 0% 2%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-2x][class*="--marginx0-x.1x"] {
-        margin: 0% 2.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-2x][class*="--marginx0-x.2x"] {
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-2x][class*="--marginx0-x.1x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-2x][class*="--marginx0-x.1x"] {
+          margin: 0% 2.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-2x][class*="--marginx0-x.2x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-2x][class*="--marginx0-x.2x"] {
+          margin: 0% 3%; }
+      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-3x], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-3x] {
         margin: 0% 3%; }
-    ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-3x] {
-      margin: 0% 3%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-3x][class*="--marginx0-x.1x"] {
-        margin: 0% 3.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-3x][class*="--marginx0-x.2x"] {
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-3x][class*="--marginx0-x.1x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-3x][class*="--marginx0-x.1x"] {
+          margin: 0% 3.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-3x][class*="--marginx0-x.2x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-3x][class*="--marginx0-x.2x"] {
+          margin: 0% 4%; }
+      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-4x], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-4x] {
         margin: 0% 4%; }
-    ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-4x] {
-      margin: 0% 4%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-4x][class*="--marginx0-x.1x"] {
-        margin: 0% 4.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-4x][class*="--marginx0-x.2x"] {
-        margin: 0% 5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx0.0x"] {
-    margin: 0%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x] {
-      margin: 0% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x][class*="--marginx0.0-0.1x"] {
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-4x][class*="--marginx0-x.1x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-4x][class*="--marginx0-x.1x"] {
+          margin: 0% 4.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin0x][class*=--margin0x-4x][class*="--marginx0-x.2x"], ol[class^=ol] li[class^=li][class*=--margin0x][class*=--margin0x-4x][class*="--marginx0-x.2x"] {
+          margin: 0% 5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx0.0x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"] {
+      margin: 0%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x] {
+        margin: 0% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x][class*="--marginx0.0-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x][class*="--marginx0.0-0.1x"] {
+          margin: 0.5% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x][class*="--marginx0.0-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x][class*="--marginx0.0-0.2x"] {
+          margin: 1% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x][class*="--marginx0.0-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x][class*="--marginx0.0-0.3x"] {
+          margin: 1.5% 0%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x] {
+        margin: 0% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x][class*="--marginx0.0-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x][class*="--marginx0.0-1.1x"] {
+          margin: 0.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x][class*="--marginx0.0-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x][class*="--marginx0.0-1.2x"] {
+          margin: 1% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x][class*="--marginx0.0-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x][class*="--marginx0.0-1.3x"] {
+          margin: 1.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x] {
+        margin: 0% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x][class*="--marginx0.0-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x][class*="--marginx0.0-2.1x"] {
+          margin: 0.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x][class*="--marginx0.0-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x][class*="--marginx0.0-2.2x"] {
+          margin: 1% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x][class*="--marginx0.0-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x][class*="--marginx0.0-2.3x"] {
+          margin: 1.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x] {
+        margin: 0% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x][class*="--marginx0.0-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x][class*="--marginx0.0-3.1x"] {
+          margin: 0.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x][class*="--marginx0.0-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x][class*="--marginx0.0-3.2x"] {
+          margin: 1% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x][class*="--marginx0.0-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x][class*="--marginx0.0-3.3x"] {
+          margin: 1.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x] {
+        margin: 0% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x][class*="--marginx0.0-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x][class*="--marginx0.0-4.1x"] {
+          margin: 0.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x][class*="--marginx0.0-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x][class*="--marginx0.0-4.2x"] {
+          margin: 1% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x][class*="--marginx0.0-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x][class*="--marginx0.0-4.3x"] {
+          margin: 1.5% 4%; }
+    ul[class^=ul] li[class^=li][class*="--marginx0.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"] {
+      margin: 0.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x] {
         margin: 0.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x][class*="--marginx0.0-0.2x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x][class*="--marginx0.1-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x][class*="--marginx0.1-0.1x"] {
+          margin: 0.5% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x][class*="--marginx0.1-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x][class*="--marginx0.1-0.2x"] {
+          margin: 1% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x][class*="--marginx0.1-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x][class*="--marginx0.1-0.3x"] {
+          margin: 1.5% 0.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x] {
+        margin: 0.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x][class*="--marginx0.1-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x][class*="--marginx0.1-1.1x"] {
+          margin: 0.5% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x][class*="--marginx0.1-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x][class*="--marginx0.1-1.2x"] {
+          margin: 1% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x][class*="--marginx0.1-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x][class*="--marginx0.1-1.3x"] {
+          margin: 1.5% 1.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x] {
+        margin: 0.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x][class*="--marginx0.1-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x][class*="--marginx0.1-2.1x"] {
+          margin: 0.5% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x][class*="--marginx0.1-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x][class*="--marginx0.1-2.2x"] {
+          margin: 1% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x][class*="--marginx0.1-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x][class*="--marginx0.1-2.3x"] {
+          margin: 1.5% 2.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x] {
+        margin: 0.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x][class*="--marginx0.1-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x][class*="--marginx0.1-3.1x"] {
+          margin: 0.5% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x][class*="--marginx0.1-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x][class*="--marginx0.1-3.2x"] {
+          margin: 1% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x][class*="--marginx0.1-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x][class*="--marginx0.1-3.3x"] {
+          margin: 1.5% 3.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x] {
+        margin: 0.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x][class*="--marginx0.1-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x][class*="--marginx0.1-4.1x"] {
+          margin: 0.5% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x][class*="--marginx0.1-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x][class*="--marginx0.1-4.2x"] {
+          margin: 1% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x][class*="--marginx0.1-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x][class*="--marginx0.1-4.3x"] {
+          margin: 1.5% 4.5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx0.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"] {
+      margin: 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x] {
         margin: 1% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-0x][class*="--marginx0.0-0.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x][class*="--marginx0.2-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x][class*="--marginx0.2-0.1x"] {
+          margin: 0.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x][class*="--marginx0.2-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x][class*="--marginx0.2-0.2x"] {
+          margin: 1% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x][class*="--marginx0.2-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x][class*="--marginx0.2-0.3x"] {
+          margin: 1.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x] {
+        margin: 1% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x][class*="--marginx0.2-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x][class*="--marginx0.2-1.1x"] {
+          margin: 0.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x][class*="--marginx0.2-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x][class*="--marginx0.2-1.2x"] {
+          margin: 1% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x][class*="--marginx0.2-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x][class*="--marginx0.2-1.3x"] {
+          margin: 1.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x] {
+        margin: 1% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x][class*="--marginx0.2-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x][class*="--marginx0.2-2.1x"] {
+          margin: 0.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x][class*="--marginx0.2-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x][class*="--marginx0.2-2.2x"] {
+          margin: 1% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x][class*="--marginx0.2-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x][class*="--marginx0.2-2.3x"] {
+          margin: 1.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x] {
+        margin: 1% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x][class*="--marginx0.2-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x][class*="--marginx0.2-3.1x"] {
+          margin: 0.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x][class*="--marginx0.2-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x][class*="--marginx0.2-3.2x"] {
+          margin: 1% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x][class*="--marginx0.2-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x][class*="--marginx0.2-3.3x"] {
+          margin: 1.5% 4%; }
+      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x] {
+        margin: 1% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x][class*="--marginx0.2-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x][class*="--marginx0.2-4.1x"] {
+          margin: 0.5% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x][class*="--marginx0.2-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x][class*="--marginx0.2-4.2x"] {
+          margin: 1% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x][class*="--marginx0.2-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x][class*="--marginx0.2-4.3x"] {
+          margin: 1.5% 5%; }
+    ul[class^=ul] li[class^=li][class*=--margin1x], ol[class^=ol] li[class^=li][class*=--margin1x] {
+      margin: 1%; }
+      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-0x], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-0x] {
+        margin: 1% 0%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-0x][class*="--marginx1-x.1x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-0x][class*="--marginx1-x.1x"] {
+          margin: 1% 0.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-0x][class*="--marginx1-x.2x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-0x][class*="--marginx1-x.2x"] {
+          margin: 1% 1%; }
+      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-1x], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-1x] {
+        margin: 1% 1%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-1x][class*="--marginx1-x.1x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-1x][class*="--marginx1-x.1x"] {
+          margin: 1% 1.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-1x][class*="--marginx1-x.2x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-1x][class*="--marginx1-x.2x"] {
+          margin: 1% 2%; }
+      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-2x], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-2x] {
+        margin: 1% 2%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-2x][class*="--marginx1-x.1x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-2x][class*="--marginx1-x.1x"] {
+          margin: 1% 2.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-2x][class*="--marginx1-x.2x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-2x][class*="--marginx1-x.2x"] {
+          margin: 1% 3%; }
+      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-3x], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-3x] {
+        margin: 1% 3%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-3x][class*="--marginx1-x.1x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-3x][class*="--marginx1-x.1x"] {
+          margin: 1% 3.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-3x][class*="--marginx1-x.2x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-3x][class*="--marginx1-x.2x"] {
+          margin: 1% 4%; }
+      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-4x], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-4x] {
+        margin: 1% 4%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-4x][class*="--marginx1-x.1x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-4x][class*="--marginx1-x.1x"] {
+          margin: 1% 4.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-4x][class*="--marginx1-x.2x"], ol[class^=ol] li[class^=li][class*=--margin1x][class*=--margin1x-4x][class*="--marginx1-x.2x"] {
+          margin: 1% 5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx1.0x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"] {
+      margin: 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x] {
+        margin: 1% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x][class*="--marginx1.0-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x][class*="--marginx1.0-0.1x"] {
+          margin: 1.5% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x][class*="--marginx1.0-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x][class*="--marginx1.0-0.2x"] {
+          margin: 2% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x][class*="--marginx1.0-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x][class*="--marginx1.0-0.3x"] {
+          margin: 2.5% 0%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x] {
+        margin: 1% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x][class*="--marginx1.0-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x][class*="--marginx1.0-1.1x"] {
+          margin: 1.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x][class*="--marginx1.0-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x][class*="--marginx1.0-1.2x"] {
+          margin: 2% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x][class*="--marginx1.0-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x][class*="--marginx1.0-1.3x"] {
+          margin: 2.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x] {
+        margin: 1% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x][class*="--marginx1.0-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x][class*="--marginx1.0-2.1x"] {
+          margin: 1.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x][class*="--marginx1.0-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x][class*="--marginx1.0-2.2x"] {
+          margin: 2% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x][class*="--marginx1.0-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x][class*="--marginx1.0-2.3x"] {
+          margin: 2.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x] {
+        margin: 1% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x][class*="--marginx1.0-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x][class*="--marginx1.0-3.1x"] {
+          margin: 1.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x][class*="--marginx1.0-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x][class*="--marginx1.0-3.2x"] {
+          margin: 2% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x][class*="--marginx1.0-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x][class*="--marginx1.0-3.3x"] {
+          margin: 2.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x] {
+        margin: 1% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x][class*="--marginx1.0-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x][class*="--marginx1.0-4.1x"] {
+          margin: 1.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x][class*="--marginx1.0-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x][class*="--marginx1.0-4.2x"] {
+          margin: 2% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x][class*="--marginx1.0-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x][class*="--marginx1.0-4.3x"] {
+          margin: 2.5% 4%; }
+    ul[class^=ul] li[class^=li][class*="--marginx1.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"] {
+      margin: 1.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x] {
         margin: 1.5% 0%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x] {
-      margin: 0% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x][class*="--marginx0.0-1.1x"] {
-        margin: 0.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x][class*="--marginx0.0-1.2x"] {
-        margin: 1% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-1x][class*="--marginx0.0-1.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x][class*="--marginx1.1-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x][class*="--marginx1.1-0.1x"] {
+          margin: 1.5% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x][class*="--marginx1.1-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x][class*="--marginx1.1-0.2x"] {
+          margin: 2% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x][class*="--marginx1.1-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x][class*="--marginx1.1-0.3x"] {
+          margin: 2.5% 0.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x] {
         margin: 1.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x] {
-      margin: 0% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x][class*="--marginx0.0-2.1x"] {
-        margin: 0.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x][class*="--marginx0.0-2.2x"] {
-        margin: 1% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-2x][class*="--marginx0.0-2.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x][class*="--marginx1.1-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x][class*="--marginx1.1-1.1x"] {
+          margin: 1.5% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x][class*="--marginx1.1-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x][class*="--marginx1.1-1.2x"] {
+          margin: 2% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x][class*="--marginx1.1-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x][class*="--marginx1.1-1.3x"] {
+          margin: 2.5% 1.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x] {
         margin: 1.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x] {
-      margin: 0% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x][class*="--marginx0.0-3.1x"] {
-        margin: 0.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x][class*="--marginx0.0-3.2x"] {
-        margin: 1% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-3x][class*="--marginx0.0-3.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x][class*="--marginx1.1-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x][class*="--marginx1.1-2.1x"] {
+          margin: 1.5% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x][class*="--marginx1.1-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x][class*="--marginx1.1-2.2x"] {
+          margin: 2% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x][class*="--marginx1.1-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x][class*="--marginx1.1-2.3x"] {
+          margin: 2.5% 2.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x] {
         margin: 1.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x] {
-      margin: 0% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x][class*="--marginx0.0-4.1x"] {
-        margin: 0.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x][class*="--marginx0.0-4.2x"] {
-        margin: 1% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.0x"][class*=--margin0x-4x][class*="--marginx0.0-4.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x][class*="--marginx1.1-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x][class*="--marginx1.1-3.1x"] {
+          margin: 1.5% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x][class*="--marginx1.1-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x][class*="--marginx1.1-3.2x"] {
+          margin: 2% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x][class*="--marginx1.1-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x][class*="--marginx1.1-3.3x"] {
+          margin: 2.5% 3.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x] {
         margin: 1.5% 4%; }
-  ul[class^=ul] li[class^=li][class*="--marginx0.1x"] {
-    margin: 0.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x] {
-      margin: 0.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x][class*="--marginx0.1-0.1x"] {
-        margin: 0.5% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x][class*="--marginx0.1-0.2x"] {
-        margin: 1% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-0x][class*="--marginx0.1-0.3x"] {
-        margin: 1.5% 0.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x] {
-      margin: 0.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x][class*="--marginx0.1-1.1x"] {
-        margin: 0.5% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x][class*="--marginx0.1-1.2x"] {
-        margin: 1% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-1x][class*="--marginx0.1-1.3x"] {
-        margin: 1.5% 1.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x] {
-      margin: 0.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x][class*="--marginx0.1-2.1x"] {
-        margin: 0.5% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x][class*="--marginx0.1-2.2x"] {
-        margin: 1% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-2x][class*="--marginx0.1-2.3x"] {
-        margin: 1.5% 2.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x] {
-      margin: 0.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x][class*="--marginx0.1-3.1x"] {
-        margin: 0.5% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x][class*="--marginx0.1-3.2x"] {
-        margin: 1% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-3x][class*="--marginx0.1-3.3x"] {
-        margin: 1.5% 3.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x] {
-      margin: 0.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x][class*="--marginx0.1-4.1x"] {
-        margin: 0.5% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x][class*="--marginx0.1-4.2x"] {
-        margin: 1% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.1x"][class*=--margin0x-4x][class*="--marginx0.1-4.3x"] {
-        margin: 1.5% 4.5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx0.2x"] {
-    margin: 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x] {
-      margin: 1% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x][class*="--marginx0.2-0.1x"] {
-        margin: 0.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x][class*="--marginx0.2-0.2x"] {
-        margin: 1% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-0x][class*="--marginx0.2-0.3x"] {
-        margin: 1.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x] {
-      margin: 1% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x][class*="--marginx0.2-1.1x"] {
-        margin: 0.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x][class*="--marginx0.2-1.2x"] {
-        margin: 1% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-1x][class*="--marginx0.2-1.3x"] {
-        margin: 1.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x] {
-      margin: 1% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x][class*="--marginx0.2-2.1x"] {
-        margin: 0.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x][class*="--marginx0.2-2.2x"] {
-        margin: 1% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-2x][class*="--marginx0.2-2.3x"] {
-        margin: 1.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x] {
-      margin: 1% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x][class*="--marginx0.2-3.1x"] {
-        margin: 0.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x][class*="--marginx0.2-3.2x"] {
-        margin: 1% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-3x][class*="--marginx0.2-3.3x"] {
-        margin: 1.5% 4%; }
-    ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x] {
-      margin: 1% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x][class*="--marginx0.2-4.1x"] {
-        margin: 0.5% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x][class*="--marginx0.2-4.2x"] {
-        margin: 1% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx0.2x"][class*=--margin0x-4x][class*="--marginx0.2-4.3x"] {
-        margin: 1.5% 5%; }
-  ul[class^=ul] li[class^=li][class*=--margin1x] {
-    margin: 1%; }
-    ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-0x] {
-      margin: 1% 0%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-0x][class*="--marginx1-x.1x"] {
-        margin: 1% 0.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-0x][class*="--marginx1-x.2x"] {
-        margin: 1% 1%; }
-    ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-1x] {
-      margin: 1% 1%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-1x][class*="--marginx1-x.1x"] {
-        margin: 1% 1.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-1x][class*="--marginx1-x.2x"] {
-        margin: 1% 2%; }
-    ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-2x] {
-      margin: 1% 2%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-2x][class*="--marginx1-x.1x"] {
-        margin: 1% 2.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-2x][class*="--marginx1-x.2x"] {
-        margin: 1% 3%; }
-    ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-3x] {
-      margin: 1% 3%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-3x][class*="--marginx1-x.1x"] {
-        margin: 1% 3.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-3x][class*="--marginx1-x.2x"] {
-        margin: 1% 4%; }
-    ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-4x] {
-      margin: 1% 4%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-4x][class*="--marginx1-x.1x"] {
-        margin: 1% 4.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin1x][class*=--margin1x-4x][class*="--marginx1-x.2x"] {
-        margin: 1% 5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx1.0x"] {
-    margin: 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x] {
-      margin: 1% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x][class*="--marginx1.0-0.1x"] {
-        margin: 1.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x][class*="--marginx1.0-0.2x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x][class*="--marginx1.1-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x][class*="--marginx1.1-4.1x"] {
+          margin: 1.5% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x][class*="--marginx1.1-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x][class*="--marginx1.1-4.2x"] {
+          margin: 2% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x][class*="--marginx1.1-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x][class*="--marginx1.1-4.3x"] {
+          margin: 2.5% 4.5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx1.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"] {
+      margin: 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x] {
         margin: 2% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-0x][class*="--marginx1.0-0.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x][class*="--marginx1.2-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x][class*="--marginx1.2-0.1x"] {
+          margin: 1.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x][class*="--marginx1.2-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x][class*="--marginx1.2-0.2x"] {
+          margin: 2% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x][class*="--marginx1.2-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x][class*="--marginx1.2-0.3x"] {
+          margin: 2.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x] {
+        margin: 2% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x][class*="--marginx1.2-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x][class*="--marginx1.2-1.1x"] {
+          margin: 1.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x][class*="--marginx1.2-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x][class*="--marginx1.2-1.2x"] {
+          margin: 2% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x][class*="--marginx1.2-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x][class*="--marginx1.2-1.3x"] {
+          margin: 2.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x] {
+        margin: 2% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x][class*="--marginx1.2-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x][class*="--marginx1.2-2.1x"] {
+          margin: 1.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x][class*="--marginx1.2-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x][class*="--marginx1.2-2.2x"] {
+          margin: 2% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x][class*="--marginx1.2-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x][class*="--marginx1.2-2.3x"] {
+          margin: 2.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x] {
+        margin: 2% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x][class*="--marginx1.2-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x][class*="--marginx1.2-3.1x"] {
+          margin: 1.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x][class*="--marginx1.2-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x][class*="--marginx1.2-3.2x"] {
+          margin: 2% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x][class*="--marginx1.2-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x][class*="--marginx1.2-3.3x"] {
+          margin: 2.5% 4%; }
+      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x] {
+        margin: 2% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x][class*="--marginx1.2-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x][class*="--marginx1.2-4.1x"] {
+          margin: 1.5% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x][class*="--marginx1.2-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x][class*="--marginx1.2-4.2x"] {
+          margin: 2% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x][class*="--marginx1.2-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x][class*="--marginx1.2-4.3x"] {
+          margin: 2.5% 5%; }
+    ul[class^=ul] li[class^=li][class*=--margin2x], ol[class^=ol] li[class^=li][class*=--margin2x] {
+      margin: 2%; }
+      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-0x], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-0x] {
+        margin: 2% 0%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-0x][class*="--marginx2-x.1x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-0x][class*="--marginx2-x.1x"] {
+          margin: 2% 0.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-0x][class*="--marginx2-x.2x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-0x][class*="--marginx2-x.2x"] {
+          margin: 2% 1%; }
+      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-1x], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-1x] {
+        margin: 2% 1%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-1x][class*="--marginx2-x.1x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-1x][class*="--marginx2-x.1x"] {
+          margin: 2% 1.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-1x][class*="--marginx2-x.2x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-1x][class*="--marginx2-x.2x"] {
+          margin: 2% 2%; }
+      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-2x], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-2x] {
+        margin: 2% 2%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-2x][class*="--marginx2-x.1x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-2x][class*="--marginx2-x.1x"] {
+          margin: 2% 2.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-2x][class*="--marginx2-x.2x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-2x][class*="--marginx2-x.2x"] {
+          margin: 2% 3%; }
+      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-3x], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-3x] {
+        margin: 2% 3%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-3x][class*="--marginx2-x.1x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-3x][class*="--marginx2-x.1x"] {
+          margin: 2% 3.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-3x][class*="--marginx2-x.2x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-3x][class*="--marginx2-x.2x"] {
+          margin: 2% 4%; }
+      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-4x], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-4x] {
+        margin: 2% 4%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-4x][class*="--marginx2-x.1x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-4x][class*="--marginx2-x.1x"] {
+          margin: 2% 4.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-4x][class*="--marginx2-x.2x"], ol[class^=ol] li[class^=li][class*=--margin2x][class*=--margin2x-4x][class*="--marginx2-x.2x"] {
+          margin: 2% 5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx2.0x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"] {
+      margin: 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x] {
+        margin: 2% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x][class*="--marginx2.0-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x][class*="--marginx2.0-0.1x"] {
+          margin: 2.5% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x][class*="--marginx2.0-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x][class*="--marginx2.0-0.2x"] {
+          margin: 3% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x][class*="--marginx2.0-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x][class*="--marginx2.0-0.3x"] {
+          margin: 3.5% 0%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x] {
+        margin: 2% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x][class*="--marginx2.0-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x][class*="--marginx2.0-1.1x"] {
+          margin: 2.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x][class*="--marginx2.0-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x][class*="--marginx2.0-1.2x"] {
+          margin: 3% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x][class*="--marginx2.0-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x][class*="--marginx2.0-1.3x"] {
+          margin: 3.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x] {
+        margin: 2% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x][class*="--marginx2.0-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x][class*="--marginx2.0-2.1x"] {
+          margin: 2.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x][class*="--marginx2.0-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x][class*="--marginx2.0-2.2x"] {
+          margin: 3% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x][class*="--marginx2.0-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x][class*="--marginx2.0-2.3x"] {
+          margin: 3.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x] {
+        margin: 2% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x][class*="--marginx2.0-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x][class*="--marginx2.0-3.1x"] {
+          margin: 2.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x][class*="--marginx2.0-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x][class*="--marginx2.0-3.2x"] {
+          margin: 3% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x][class*="--marginx2.0-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x][class*="--marginx2.0-3.3x"] {
+          margin: 3.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x] {
+        margin: 2% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x][class*="--marginx2.0-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x][class*="--marginx2.0-4.1x"] {
+          margin: 2.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x][class*="--marginx2.0-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x][class*="--marginx2.0-4.2x"] {
+          margin: 3% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x][class*="--marginx2.0-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x][class*="--marginx2.0-4.3x"] {
+          margin: 3.5% 4%; }
+    ul[class^=ul] li[class^=li][class*="--marginx2.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"] {
+      margin: 2.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x] {
         margin: 2.5% 0%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x] {
-      margin: 1% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x][class*="--marginx1.0-1.1x"] {
-        margin: 1.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x][class*="--marginx1.0-1.2x"] {
-        margin: 2% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-1x][class*="--marginx1.0-1.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x][class*="--marginx2.1-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x][class*="--marginx2.1-0.1x"] {
+          margin: 2.5% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x][class*="--marginx2.1-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x][class*="--marginx2.1-0.2x"] {
+          margin: 3% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x][class*="--marginx2.1-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x][class*="--marginx2.1-0.3x"] {
+          margin: 3.5% 0.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x] {
         margin: 2.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x] {
-      margin: 1% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x][class*="--marginx1.0-2.1x"] {
-        margin: 1.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x][class*="--marginx1.0-2.2x"] {
-        margin: 2% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-2x][class*="--marginx1.0-2.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x][class*="--marginx2.1-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x][class*="--marginx2.1-1.1x"] {
+          margin: 2.5% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x][class*="--marginx2.1-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x][class*="--marginx2.1-1.2x"] {
+          margin: 3% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x][class*="--marginx2.1-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x][class*="--marginx2.1-1.3x"] {
+          margin: 3.5% 1.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x] {
         margin: 2.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x] {
-      margin: 1% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x][class*="--marginx1.0-3.1x"] {
-        margin: 1.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x][class*="--marginx1.0-3.2x"] {
-        margin: 2% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-3x][class*="--marginx1.0-3.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x][class*="--marginx2.1-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x][class*="--marginx2.1-2.1x"] {
+          margin: 2.5% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x][class*="--marginx2.1-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x][class*="--marginx2.1-2.2x"] {
+          margin: 3% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x][class*="--marginx2.1-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x][class*="--marginx2.1-2.3x"] {
+          margin: 3.5% 2.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x] {
         margin: 2.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x] {
-      margin: 1% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x][class*="--marginx1.0-4.1x"] {
-        margin: 1.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x][class*="--marginx1.0-4.2x"] {
-        margin: 2% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.0x"][class*=--margin1x-4x][class*="--marginx1.0-4.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x][class*="--marginx2.1-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x][class*="--marginx2.1-3.1x"] {
+          margin: 2.5% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x][class*="--marginx2.1-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x][class*="--marginx2.1-3.2x"] {
+          margin: 3% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x][class*="--marginx2.1-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x][class*="--marginx2.1-3.3x"] {
+          margin: 3.5% 3.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x] {
         margin: 2.5% 4%; }
-  ul[class^=ul] li[class^=li][class*="--marginx1.1x"] {
-    margin: 1.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x] {
-      margin: 1.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x][class*="--marginx1.1-0.1x"] {
-        margin: 1.5% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x][class*="--marginx1.1-0.2x"] {
-        margin: 2% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-0x][class*="--marginx1.1-0.3x"] {
-        margin: 2.5% 0.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x] {
-      margin: 1.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x][class*="--marginx1.1-1.1x"] {
-        margin: 1.5% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x][class*="--marginx1.1-1.2x"] {
-        margin: 2% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-1x][class*="--marginx1.1-1.3x"] {
-        margin: 2.5% 1.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x] {
-      margin: 1.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x][class*="--marginx1.1-2.1x"] {
-        margin: 1.5% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x][class*="--marginx1.1-2.2x"] {
-        margin: 2% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-2x][class*="--marginx1.1-2.3x"] {
-        margin: 2.5% 2.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x] {
-      margin: 1.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x][class*="--marginx1.1-3.1x"] {
-        margin: 1.5% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x][class*="--marginx1.1-3.2x"] {
-        margin: 2% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-3x][class*="--marginx1.1-3.3x"] {
-        margin: 2.5% 3.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x] {
-      margin: 1.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x][class*="--marginx1.1-4.1x"] {
-        margin: 1.5% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x][class*="--marginx1.1-4.2x"] {
-        margin: 2% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.1x"][class*=--margin1x-4x][class*="--marginx1.1-4.3x"] {
-        margin: 2.5% 4.5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx1.2x"] {
-    margin: 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x] {
-      margin: 2% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x][class*="--marginx1.2-0.1x"] {
-        margin: 1.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x][class*="--marginx1.2-0.2x"] {
-        margin: 2% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-0x][class*="--marginx1.2-0.3x"] {
-        margin: 2.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x] {
-      margin: 2% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x][class*="--marginx1.2-1.1x"] {
-        margin: 1.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x][class*="--marginx1.2-1.2x"] {
-        margin: 2% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-1x][class*="--marginx1.2-1.3x"] {
-        margin: 2.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x] {
-      margin: 2% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x][class*="--marginx1.2-2.1x"] {
-        margin: 1.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x][class*="--marginx1.2-2.2x"] {
-        margin: 2% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-2x][class*="--marginx1.2-2.3x"] {
-        margin: 2.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x] {
-      margin: 2% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x][class*="--marginx1.2-3.1x"] {
-        margin: 1.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x][class*="--marginx1.2-3.2x"] {
-        margin: 2% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-3x][class*="--marginx1.2-3.3x"] {
-        margin: 2.5% 4%; }
-    ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x] {
-      margin: 2% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x][class*="--marginx1.2-4.1x"] {
-        margin: 1.5% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x][class*="--marginx1.2-4.2x"] {
-        margin: 2% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx1.2x"][class*=--margin1x-4x][class*="--marginx1.2-4.3x"] {
-        margin: 2.5% 5%; }
-  ul[class^=ul] li[class^=li][class*=--margin2x] {
-    margin: 2%; }
-    ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-0x] {
-      margin: 2% 0%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-0x][class*="--marginx2-x.1x"] {
-        margin: 2% 0.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-0x][class*="--marginx2-x.2x"] {
-        margin: 2% 1%; }
-    ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-1x] {
-      margin: 2% 1%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-1x][class*="--marginx2-x.1x"] {
-        margin: 2% 1.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-1x][class*="--marginx2-x.2x"] {
-        margin: 2% 2%; }
-    ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-2x] {
-      margin: 2% 2%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-2x][class*="--marginx2-x.1x"] {
-        margin: 2% 2.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-2x][class*="--marginx2-x.2x"] {
-        margin: 2% 3%; }
-    ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-3x] {
-      margin: 2% 3%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-3x][class*="--marginx2-x.1x"] {
-        margin: 2% 3.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-3x][class*="--marginx2-x.2x"] {
-        margin: 2% 4%; }
-    ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-4x] {
-      margin: 2% 4%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-4x][class*="--marginx2-x.1x"] {
-        margin: 2% 4.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin2x][class*=--margin2x-4x][class*="--marginx2-x.2x"] {
-        margin: 2% 5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx2.0x"] {
-    margin: 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x] {
-      margin: 2% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x][class*="--marginx2.0-0.1x"] {
-        margin: 2.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x][class*="--marginx2.0-0.2x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x][class*="--marginx2.1-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x][class*="--marginx2.1-4.1x"] {
+          margin: 2.5% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x][class*="--marginx2.1-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x][class*="--marginx2.1-4.2x"] {
+          margin: 3% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x][class*="--marginx2.1-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x][class*="--marginx2.1-4.3x"] {
+          margin: 3.5% 4.5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx2.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"] {
+      margin: 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x] {
         margin: 3% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-0x][class*="--marginx2.0-0.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x][class*="--marginx2.2-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x][class*="--marginx2.2-0.1x"] {
+          margin: 2.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x][class*="--marginx2.2-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x][class*="--marginx2.2-0.2x"] {
+          margin: 3% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x][class*="--marginx2.2-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x][class*="--marginx2.2-0.3x"] {
+          margin: 3.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x] {
+        margin: 3% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x][class*="--marginx2.2-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x][class*="--marginx2.2-1.1x"] {
+          margin: 2.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x][class*="--marginx2.2-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x][class*="--marginx2.2-1.2x"] {
+          margin: 3% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x][class*="--marginx2.2-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x][class*="--marginx2.2-1.3x"] {
+          margin: 3.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x] {
+        margin: 3% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x][class*="--marginx2.2-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x][class*="--marginx2.2-2.1x"] {
+          margin: 2.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x][class*="--marginx2.2-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x][class*="--marginx2.2-2.2x"] {
+          margin: 3% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x][class*="--marginx2.2-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x][class*="--marginx2.2-2.3x"] {
+          margin: 3.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x] {
+        margin: 3% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x][class*="--marginx2.2-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x][class*="--marginx2.2-3.1x"] {
+          margin: 2.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x][class*="--marginx2.2-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x][class*="--marginx2.2-3.2x"] {
+          margin: 3% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x][class*="--marginx2.2-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x][class*="--marginx2.2-3.3x"] {
+          margin: 3.5% 4%; }
+      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x] {
+        margin: 3% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x][class*="--marginx2.2-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x][class*="--marginx2.2-4.1x"] {
+          margin: 2.5% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x][class*="--marginx2.2-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x][class*="--marginx2.2-4.2x"] {
+          margin: 3% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x][class*="--marginx2.2-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x][class*="--marginx2.2-4.3x"] {
+          margin: 3.5% 5%; }
+    ul[class^=ul] li[class^=li][class*=--margin3x], ol[class^=ol] li[class^=li][class*=--margin3x] {
+      margin: 3%; }
+      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-0x], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-0x] {
+        margin: 3% 0%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-0x][class*="--marginx3-x.1x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-0x][class*="--marginx3-x.1x"] {
+          margin: 3% 0.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-0x][class*="--marginx3-x.2x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-0x][class*="--marginx3-x.2x"] {
+          margin: 3% 1%; }
+      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-1x], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-1x] {
+        margin: 3% 1%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-1x][class*="--marginx3-x.1x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-1x][class*="--marginx3-x.1x"] {
+          margin: 3% 1.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-1x][class*="--marginx3-x.2x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-1x][class*="--marginx3-x.2x"] {
+          margin: 3% 2%; }
+      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-2x], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-2x] {
+        margin: 3% 2%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-2x][class*="--marginx3-x.1x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-2x][class*="--marginx3-x.1x"] {
+          margin: 3% 2.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-2x][class*="--marginx3-x.2x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-2x][class*="--marginx3-x.2x"] {
+          margin: 3% 3%; }
+      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-3x], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-3x] {
+        margin: 3% 3%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-3x][class*="--marginx3-x.1x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-3x][class*="--marginx3-x.1x"] {
+          margin: 3% 3.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-3x][class*="--marginx3-x.2x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-3x][class*="--marginx3-x.2x"] {
+          margin: 3% 4%; }
+      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-4x], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-4x] {
+        margin: 3% 4%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-4x][class*="--marginx3-x.1x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-4x][class*="--marginx3-x.1x"] {
+          margin: 3% 4.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-4x][class*="--marginx3-x.2x"], ol[class^=ol] li[class^=li][class*=--margin3x][class*=--margin3x-4x][class*="--marginx3-x.2x"] {
+          margin: 3% 5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx3.0x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"] {
+      margin: 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x] {
+        margin: 3% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x][class*="--marginx3.0-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x][class*="--marginx3.0-0.1x"] {
+          margin: 3.5% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x][class*="--marginx3.0-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x][class*="--marginx3.0-0.2x"] {
+          margin: 4% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x][class*="--marginx3.0-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x][class*="--marginx3.0-0.3x"] {
+          margin: 4.5% 0%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x] {
+        margin: 3% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x][class*="--marginx3.0-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x][class*="--marginx3.0-1.1x"] {
+          margin: 3.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x][class*="--marginx3.0-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x][class*="--marginx3.0-1.2x"] {
+          margin: 4% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x][class*="--marginx3.0-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x][class*="--marginx3.0-1.3x"] {
+          margin: 4.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x] {
+        margin: 3% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x][class*="--marginx3.0-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x][class*="--marginx3.0-2.1x"] {
+          margin: 3.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x][class*="--marginx3.0-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x][class*="--marginx3.0-2.2x"] {
+          margin: 4% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x][class*="--marginx3.0-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x][class*="--marginx3.0-2.3x"] {
+          margin: 4.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x] {
+        margin: 3% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x][class*="--marginx3.0-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x][class*="--marginx3.0-3.1x"] {
+          margin: 3.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x][class*="--marginx3.0-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x][class*="--marginx3.0-3.2x"] {
+          margin: 4% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x][class*="--marginx3.0-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x][class*="--marginx3.0-3.3x"] {
+          margin: 4.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x] {
+        margin: 3% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x][class*="--marginx3.0-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x][class*="--marginx3.0-4.1x"] {
+          margin: 3.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x][class*="--marginx3.0-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x][class*="--marginx3.0-4.2x"] {
+          margin: 4% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x][class*="--marginx3.0-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x][class*="--marginx3.0-4.3x"] {
+          margin: 4.5% 4%; }
+    ul[class^=ul] li[class^=li][class*="--marginx3.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"] {
+      margin: 3.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x] {
         margin: 3.5% 0%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x] {
-      margin: 2% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x][class*="--marginx2.0-1.1x"] {
-        margin: 2.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x][class*="--marginx2.0-1.2x"] {
-        margin: 3% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-1x][class*="--marginx2.0-1.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x][class*="--marginx3.1-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x][class*="--marginx3.1-0.1x"] {
+          margin: 3.5% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x][class*="--marginx3.1-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x][class*="--marginx3.1-0.2x"] {
+          margin: 4% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x][class*="--marginx3.1-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x][class*="--marginx3.1-0.3x"] {
+          margin: 4.5% 0.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x] {
         margin: 3.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x] {
-      margin: 2% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x][class*="--marginx2.0-2.1x"] {
-        margin: 2.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x][class*="--marginx2.0-2.2x"] {
-        margin: 3% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-2x][class*="--marginx2.0-2.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x][class*="--marginx3.1-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x][class*="--marginx3.1-1.1x"] {
+          margin: 3.5% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x][class*="--marginx3.1-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x][class*="--marginx3.1-1.2x"] {
+          margin: 4% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x][class*="--marginx3.1-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x][class*="--marginx3.1-1.3x"] {
+          margin: 4.5% 1.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x] {
         margin: 3.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x] {
-      margin: 2% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x][class*="--marginx2.0-3.1x"] {
-        margin: 2.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x][class*="--marginx2.0-3.2x"] {
-        margin: 3% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-3x][class*="--marginx2.0-3.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x][class*="--marginx3.1-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x][class*="--marginx3.1-2.1x"] {
+          margin: 3.5% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x][class*="--marginx3.1-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x][class*="--marginx3.1-2.2x"] {
+          margin: 4% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x][class*="--marginx3.1-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x][class*="--marginx3.1-2.3x"] {
+          margin: 4.5% 2.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x] {
         margin: 3.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x] {
-      margin: 2% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x][class*="--marginx2.0-4.1x"] {
-        margin: 2.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x][class*="--marginx2.0-4.2x"] {
-        margin: 3% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.0x"][class*=--margin2x-4x][class*="--marginx2.0-4.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x][class*="--marginx3.1-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x][class*="--marginx3.1-3.1x"] {
+          margin: 3.5% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x][class*="--marginx3.1-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x][class*="--marginx3.1-3.2x"] {
+          margin: 4% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x][class*="--marginx3.1-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x][class*="--marginx3.1-3.3x"] {
+          margin: 4.5% 3.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x] {
         margin: 3.5% 4%; }
-  ul[class^=ul] li[class^=li][class*="--marginx2.1x"] {
-    margin: 2.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x] {
-      margin: 2.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x][class*="--marginx2.1-0.1x"] {
-        margin: 2.5% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x][class*="--marginx2.1-0.2x"] {
-        margin: 3% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-0x][class*="--marginx2.1-0.3x"] {
-        margin: 3.5% 0.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x] {
-      margin: 2.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x][class*="--marginx2.1-1.1x"] {
-        margin: 2.5% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x][class*="--marginx2.1-1.2x"] {
-        margin: 3% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-1x][class*="--marginx2.1-1.3x"] {
-        margin: 3.5% 1.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x] {
-      margin: 2.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x][class*="--marginx2.1-2.1x"] {
-        margin: 2.5% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x][class*="--marginx2.1-2.2x"] {
-        margin: 3% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-2x][class*="--marginx2.1-2.3x"] {
-        margin: 3.5% 2.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x] {
-      margin: 2.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x][class*="--marginx2.1-3.1x"] {
-        margin: 2.5% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x][class*="--marginx2.1-3.2x"] {
-        margin: 3% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-3x][class*="--marginx2.1-3.3x"] {
-        margin: 3.5% 3.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x] {
-      margin: 2.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x][class*="--marginx2.1-4.1x"] {
-        margin: 2.5% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x][class*="--marginx2.1-4.2x"] {
-        margin: 3% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.1x"][class*=--margin2x-4x][class*="--marginx2.1-4.3x"] {
-        margin: 3.5% 4.5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx2.2x"] {
-    margin: 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x] {
-      margin: 3% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x][class*="--marginx2.2-0.1x"] {
-        margin: 2.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x][class*="--marginx2.2-0.2x"] {
-        margin: 3% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-0x][class*="--marginx2.2-0.3x"] {
-        margin: 3.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x] {
-      margin: 3% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x][class*="--marginx2.2-1.1x"] {
-        margin: 2.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x][class*="--marginx2.2-1.2x"] {
-        margin: 3% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-1x][class*="--marginx2.2-1.3x"] {
-        margin: 3.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x] {
-      margin: 3% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x][class*="--marginx2.2-2.1x"] {
-        margin: 2.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x][class*="--marginx2.2-2.2x"] {
-        margin: 3% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-2x][class*="--marginx2.2-2.3x"] {
-        margin: 3.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x] {
-      margin: 3% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x][class*="--marginx2.2-3.1x"] {
-        margin: 2.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x][class*="--marginx2.2-3.2x"] {
-        margin: 3% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-3x][class*="--marginx2.2-3.3x"] {
-        margin: 3.5% 4%; }
-    ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x] {
-      margin: 3% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x][class*="--marginx2.2-4.1x"] {
-        margin: 2.5% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x][class*="--marginx2.2-4.2x"] {
-        margin: 3% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx2.2x"][class*=--margin2x-4x][class*="--marginx2.2-4.3x"] {
-        margin: 3.5% 5%; }
-  ul[class^=ul] li[class^=li][class*=--margin3x] {
-    margin: 3%; }
-    ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-0x] {
-      margin: 3% 0%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-0x][class*="--marginx3-x.1x"] {
-        margin: 3% 0.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-0x][class*="--marginx3-x.2x"] {
-        margin: 3% 1%; }
-    ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-1x] {
-      margin: 3% 1%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-1x][class*="--marginx3-x.1x"] {
-        margin: 3% 1.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-1x][class*="--marginx3-x.2x"] {
-        margin: 3% 2%; }
-    ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-2x] {
-      margin: 3% 2%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-2x][class*="--marginx3-x.1x"] {
-        margin: 3% 2.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-2x][class*="--marginx3-x.2x"] {
-        margin: 3% 3%; }
-    ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-3x] {
-      margin: 3% 3%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-3x][class*="--marginx3-x.1x"] {
-        margin: 3% 3.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-3x][class*="--marginx3-x.2x"] {
-        margin: 3% 4%; }
-    ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-4x] {
-      margin: 3% 4%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-4x][class*="--marginx3-x.1x"] {
-        margin: 3% 4.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin3x][class*=--margin3x-4x][class*="--marginx3-x.2x"] {
-        margin: 3% 5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx3.0x"] {
-    margin: 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x] {
-      margin: 3% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x][class*="--marginx3.0-0.1x"] {
-        margin: 3.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x][class*="--marginx3.0-0.2x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x][class*="--marginx3.1-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x][class*="--marginx3.1-4.1x"] {
+          margin: 3.5% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x][class*="--marginx3.1-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x][class*="--marginx3.1-4.2x"] {
+          margin: 4% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x][class*="--marginx3.1-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x][class*="--marginx3.1-4.3x"] {
+          margin: 4.5% 4.5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx3.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"] {
+      margin: 4%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x] {
         margin: 4% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-0x][class*="--marginx3.0-0.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x][class*="--marginx3.2-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x][class*="--marginx3.2-0.1x"] {
+          margin: 3.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x][class*="--marginx3.2-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x][class*="--marginx3.2-0.2x"] {
+          margin: 4% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x][class*="--marginx3.2-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x][class*="--marginx3.2-0.3x"] {
+          margin: 4.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x] {
+        margin: 4% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x][class*="--marginx3.2-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x][class*="--marginx3.2-1.1x"] {
+          margin: 3.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x][class*="--marginx3.2-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x][class*="--marginx3.2-1.2x"] {
+          margin: 4% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x][class*="--marginx3.2-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x][class*="--marginx3.2-1.3x"] {
+          margin: 4.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x] {
+        margin: 4% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x][class*="--marginx3.2-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x][class*="--marginx3.2-2.1x"] {
+          margin: 3.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x][class*="--marginx3.2-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x][class*="--marginx3.2-2.2x"] {
+          margin: 4% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x][class*="--marginx3.2-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x][class*="--marginx3.2-2.3x"] {
+          margin: 4.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x] {
+        margin: 4% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x][class*="--marginx3.2-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x][class*="--marginx3.2-3.1x"] {
+          margin: 3.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x][class*="--marginx3.2-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x][class*="--marginx3.2-3.2x"] {
+          margin: 4% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x][class*="--marginx3.2-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x][class*="--marginx3.2-3.3x"] {
+          margin: 4.5% 4%; }
+      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x] {
+        margin: 4% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x][class*="--marginx3.2-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x][class*="--marginx3.2-4.1x"] {
+          margin: 3.5% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x][class*="--marginx3.2-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x][class*="--marginx3.2-4.2x"] {
+          margin: 4% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x][class*="--marginx3.2-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x][class*="--marginx3.2-4.3x"] {
+          margin: 4.5% 5%; }
+    ul[class^=ul] li[class^=li][class*=--margin4x], ol[class^=ol] li[class^=li][class*=--margin4x] {
+      margin: 4%; }
+      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-0x], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-0x] {
+        margin: 4% 0%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-0x][class*="--marginx4-x.1x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-0x][class*="--marginx4-x.1x"] {
+          margin: 4% 0.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-0x][class*="--marginx4-x.2x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-0x][class*="--marginx4-x.2x"] {
+          margin: 4% 1%; }
+      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-1x], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-1x] {
+        margin: 4% 1%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-1x][class*="--marginx4-x.1x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-1x][class*="--marginx4-x.1x"] {
+          margin: 4% 1.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-1x][class*="--marginx4-x.2x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-1x][class*="--marginx4-x.2x"] {
+          margin: 4% 2%; }
+      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-2x], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-2x] {
+        margin: 4% 2%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-2x][class*="--marginx4-x.1x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-2x][class*="--marginx4-x.1x"] {
+          margin: 4% 2.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-2x][class*="--marginx4-x.2x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-2x][class*="--marginx4-x.2x"] {
+          margin: 4% 3%; }
+      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-3x], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-3x] {
+        margin: 4% 3%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-3x][class*="--marginx4-x.1x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-3x][class*="--marginx4-x.1x"] {
+          margin: 4% 3.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-3x][class*="--marginx4-x.2x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-3x][class*="--marginx4-x.2x"] {
+          margin: 4% 4%; }
+      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-4x], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-4x] {
+        margin: 4% 4%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-4x][class*="--marginx4-x.1x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-4x][class*="--marginx4-x.1x"] {
+          margin: 4% 4.5%; }
+        ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-4x][class*="--marginx4-x.2x"], ol[class^=ol] li[class^=li][class*=--margin4x][class*=--margin4x-4x][class*="--marginx4-x.2x"] {
+          margin: 4% 5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx4.0x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"] {
+      margin: 4%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x] {
+        margin: 4% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x][class*="--marginx4.0-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x][class*="--marginx4.0-0.1x"] {
+          margin: 4.5% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x][class*="--marginx4.0-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x][class*="--marginx4.0-0.2x"] {
+          margin: 5% 0%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x][class*="--marginx4.0-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x][class*="--marginx4.0-0.3x"] {
+          margin: 5.5% 0%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x] {
+        margin: 4% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x][class*="--marginx4.0-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x][class*="--marginx4.0-1.1x"] {
+          margin: 4.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x][class*="--marginx4.0-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x][class*="--marginx4.0-1.2x"] {
+          margin: 5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x][class*="--marginx4.0-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x][class*="--marginx4.0-1.3x"] {
+          margin: 5.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x] {
+        margin: 4% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x][class*="--marginx4.0-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x][class*="--marginx4.0-2.1x"] {
+          margin: 4.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x][class*="--marginx4.0-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x][class*="--marginx4.0-2.2x"] {
+          margin: 5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x][class*="--marginx4.0-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x][class*="--marginx4.0-2.3x"] {
+          margin: 5.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x] {
+        margin: 4% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x][class*="--marginx4.0-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x][class*="--marginx4.0-3.1x"] {
+          margin: 4.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x][class*="--marginx4.0-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x][class*="--marginx4.0-3.2x"] {
+          margin: 5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x][class*="--marginx4.0-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x][class*="--marginx4.0-3.3x"] {
+          margin: 5.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x] {
+        margin: 4% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x][class*="--marginx4.0-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x][class*="--marginx4.0-4.1x"] {
+          margin: 4.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x][class*="--marginx4.0-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x][class*="--marginx4.0-4.2x"] {
+          margin: 5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x][class*="--marginx4.0-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x][class*="--marginx4.0-4.3x"] {
+          margin: 5.5% 4%; }
+    ul[class^=ul] li[class^=li][class*="--marginx4.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"] {
+      margin: 4.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x] {
         margin: 4.5% 0%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x] {
-      margin: 3% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x][class*="--marginx3.0-1.1x"] {
-        margin: 3.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x][class*="--marginx3.0-1.2x"] {
-        margin: 4% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-1x][class*="--marginx3.0-1.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x][class*="--marginx4.1-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x][class*="--marginx4.1-0.1x"] {
+          margin: 4.5% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x][class*="--marginx4.1-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x][class*="--marginx4.1-0.2x"] {
+          margin: 5% 0.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x][class*="--marginx4.1-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x][class*="--marginx4.1-0.3x"] {
+          margin: 5.5% 0.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x] {
         margin: 4.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x] {
-      margin: 3% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x][class*="--marginx3.0-2.1x"] {
-        margin: 3.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x][class*="--marginx3.0-2.2x"] {
-        margin: 4% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-2x][class*="--marginx3.0-2.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x][class*="--marginx4.1-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x][class*="--marginx4.1-1.1x"] {
+          margin: 4.5% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x][class*="--marginx4.1-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x][class*="--marginx4.1-1.2x"] {
+          margin: 5% 1.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x][class*="--marginx4.1-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x][class*="--marginx4.1-1.3x"] {
+          margin: 5.5% 1.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x] {
         margin: 4.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x] {
-      margin: 3% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x][class*="--marginx3.0-3.1x"] {
-        margin: 3.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x][class*="--marginx3.0-3.2x"] {
-        margin: 4% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-3x][class*="--marginx3.0-3.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x][class*="--marginx4.1-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x][class*="--marginx4.1-2.1x"] {
+          margin: 4.5% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x][class*="--marginx4.1-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x][class*="--marginx4.1-2.2x"] {
+          margin: 5% 2.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x][class*="--marginx4.1-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x][class*="--marginx4.1-2.3x"] {
+          margin: 5.5% 2.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x] {
         margin: 4.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x] {
-      margin: 3% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x][class*="--marginx3.0-4.1x"] {
-        margin: 3.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x][class*="--marginx3.0-4.2x"] {
-        margin: 4% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.0x"][class*=--margin3x-4x][class*="--marginx3.0-4.3x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x][class*="--marginx4.1-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x][class*="--marginx4.1-3.1x"] {
+          margin: 4.5% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x][class*="--marginx4.1-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x][class*="--marginx4.1-3.2x"] {
+          margin: 5% 3.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x][class*="--marginx4.1-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x][class*="--marginx4.1-3.3x"] {
+          margin: 5.5% 3.5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x] {
         margin: 4.5% 4%; }
-  ul[class^=ul] li[class^=li][class*="--marginx3.1x"] {
-    margin: 3.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x] {
-      margin: 3.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x][class*="--marginx3.1-0.1x"] {
-        margin: 3.5% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x][class*="--marginx3.1-0.2x"] {
-        margin: 4% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-0x][class*="--marginx3.1-0.3x"] {
-        margin: 4.5% 0.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x] {
-      margin: 3.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x][class*="--marginx3.1-1.1x"] {
-        margin: 3.5% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x][class*="--marginx3.1-1.2x"] {
-        margin: 4% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-1x][class*="--marginx3.1-1.3x"] {
-        margin: 4.5% 1.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x] {
-      margin: 3.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x][class*="--marginx3.1-2.1x"] {
-        margin: 3.5% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x][class*="--marginx3.1-2.2x"] {
-        margin: 4% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-2x][class*="--marginx3.1-2.3x"] {
-        margin: 4.5% 2.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x] {
-      margin: 3.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x][class*="--marginx3.1-3.1x"] {
-        margin: 3.5% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x][class*="--marginx3.1-3.2x"] {
-        margin: 4% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-3x][class*="--marginx3.1-3.3x"] {
-        margin: 4.5% 3.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x] {
-      margin: 3.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x][class*="--marginx3.1-4.1x"] {
-        margin: 3.5% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x][class*="--marginx3.1-4.2x"] {
-        margin: 4% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.1x"][class*=--margin3x-4x][class*="--marginx3.1-4.3x"] {
-        margin: 4.5% 4.5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx3.2x"] {
-    margin: 4%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x] {
-      margin: 4% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x][class*="--marginx3.2-0.1x"] {
-        margin: 3.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x][class*="--marginx3.2-0.2x"] {
-        margin: 4% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-0x][class*="--marginx3.2-0.3x"] {
-        margin: 4.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x] {
-      margin: 4% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x][class*="--marginx3.2-1.1x"] {
-        margin: 3.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x][class*="--marginx3.2-1.2x"] {
-        margin: 4% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-1x][class*="--marginx3.2-1.3x"] {
-        margin: 4.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x] {
-      margin: 4% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x][class*="--marginx3.2-2.1x"] {
-        margin: 3.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x][class*="--marginx3.2-2.2x"] {
-        margin: 4% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-2x][class*="--marginx3.2-2.3x"] {
-        margin: 4.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x] {
-      margin: 4% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x][class*="--marginx3.2-3.1x"] {
-        margin: 3.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x][class*="--marginx3.2-3.2x"] {
-        margin: 4% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-3x][class*="--marginx3.2-3.3x"] {
-        margin: 4.5% 4%; }
-    ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x] {
-      margin: 4% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x][class*="--marginx3.2-4.1x"] {
-        margin: 3.5% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x][class*="--marginx3.2-4.2x"] {
-        margin: 4% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx3.2x"][class*=--margin3x-4x][class*="--marginx3.2-4.3x"] {
-        margin: 4.5% 5%; }
-  ul[class^=ul] li[class^=li][class*=--margin4x] {
-    margin: 4%; }
-    ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-0x] {
-      margin: 4% 0%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-0x][class*="--marginx4-x.1x"] {
-        margin: 4% 0.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-0x][class*="--marginx4-x.2x"] {
-        margin: 4% 1%; }
-    ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-1x] {
-      margin: 4% 1%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-1x][class*="--marginx4-x.1x"] {
-        margin: 4% 1.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-1x][class*="--marginx4-x.2x"] {
-        margin: 4% 2%; }
-    ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-2x] {
-      margin: 4% 2%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-2x][class*="--marginx4-x.1x"] {
-        margin: 4% 2.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-2x][class*="--marginx4-x.2x"] {
-        margin: 4% 3%; }
-    ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-3x] {
-      margin: 4% 3%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-3x][class*="--marginx4-x.1x"] {
-        margin: 4% 3.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-3x][class*="--marginx4-x.2x"] {
-        margin: 4% 4%; }
-    ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-4x] {
-      margin: 4% 4%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-4x][class*="--marginx4-x.1x"] {
-        margin: 4% 4.5%; }
-      ul[class^=ul] li[class^=li][class*=--margin4x][class*=--margin4x-4x][class*="--marginx4-x.2x"] {
-        margin: 4% 5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx4.0x"] {
-    margin: 4%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x] {
-      margin: 4% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x][class*="--marginx4.0-0.1x"] {
-        margin: 4.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x][class*="--marginx4.0-0.2x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x][class*="--marginx4.1-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x][class*="--marginx4.1-4.1x"] {
+          margin: 4.5% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x][class*="--marginx4.1-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x][class*="--marginx4.1-4.2x"] {
+          margin: 5% 4.5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x][class*="--marginx4.1-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x][class*="--marginx4.1-4.3x"] {
+          margin: 5.5% 4.5%; }
+    ul[class^=ul] li[class^=li][class*="--marginx4.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"] {
+      margin: 5%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x] {
         margin: 5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-0x][class*="--marginx4.0-0.3x"] {
-        margin: 5.5% 0%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x] {
-      margin: 4% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x][class*="--marginx4.0-1.1x"] {
-        margin: 4.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x][class*="--marginx4.0-1.2x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x][class*="--marginx4.2-0.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x][class*="--marginx4.2-0.1x"] {
+          margin: 4.5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x][class*="--marginx4.2-0.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x][class*="--marginx4.2-0.2x"] {
+          margin: 5% 1%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x][class*="--marginx4.2-0.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x][class*="--marginx4.2-0.3x"] {
+          margin: 5.5% 1%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x] {
         margin: 5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-1x][class*="--marginx4.0-1.3x"] {
-        margin: 5.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x] {
-      margin: 4% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x][class*="--marginx4.0-2.1x"] {
-        margin: 4.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x][class*="--marginx4.0-2.2x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x][class*="--marginx4.2-1.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x][class*="--marginx4.2-1.1x"] {
+          margin: 4.5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x][class*="--marginx4.2-1.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x][class*="--marginx4.2-1.2x"] {
+          margin: 5% 2%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x][class*="--marginx4.2-1.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x][class*="--marginx4.2-1.3x"] {
+          margin: 5.5% 2%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x] {
         margin: 5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-2x][class*="--marginx4.0-2.3x"] {
-        margin: 5.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x] {
-      margin: 4% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x][class*="--marginx4.0-3.1x"] {
-        margin: 4.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x][class*="--marginx4.0-3.2x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x][class*="--marginx4.2-2.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x][class*="--marginx4.2-2.1x"] {
+          margin: 4.5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x][class*="--marginx4.2-2.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x][class*="--marginx4.2-2.2x"] {
+          margin: 5% 3%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x][class*="--marginx4.2-2.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x][class*="--marginx4.2-2.3x"] {
+          margin: 5.5% 3%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x] {
         margin: 5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-3x][class*="--marginx4.0-3.3x"] {
-        margin: 5.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x] {
-      margin: 4% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x][class*="--marginx4.0-4.1x"] {
-        margin: 4.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x][class*="--marginx4.0-4.2x"] {
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x][class*="--marginx4.2-3.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x][class*="--marginx4.2-3.1x"] {
+          margin: 4.5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x][class*="--marginx4.2-3.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x][class*="--marginx4.2-3.2x"] {
+          margin: 5% 4%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x][class*="--marginx4.2-3.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x][class*="--marginx4.2-3.3x"] {
+          margin: 5.5% 4%; }
+      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x] {
         margin: 5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.0x"][class*=--margin4x-4x][class*="--marginx4.0-4.3x"] {
-        margin: 5.5% 4%; }
-  ul[class^=ul] li[class^=li][class*="--marginx4.1x"] {
-    margin: 4.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x] {
-      margin: 4.5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x][class*="--marginx4.1-0.1x"] {
-        margin: 4.5% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x][class*="--marginx4.1-0.2x"] {
-        margin: 5% 0.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-0x][class*="--marginx4.1-0.3x"] {
-        margin: 5.5% 0.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x] {
-      margin: 4.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x][class*="--marginx4.1-1.1x"] {
-        margin: 4.5% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x][class*="--marginx4.1-1.2x"] {
-        margin: 5% 1.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-1x][class*="--marginx4.1-1.3x"] {
-        margin: 5.5% 1.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x] {
-      margin: 4.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x][class*="--marginx4.1-2.1x"] {
-        margin: 4.5% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x][class*="--marginx4.1-2.2x"] {
-        margin: 5% 2.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-2x][class*="--marginx4.1-2.3x"] {
-        margin: 5.5% 2.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x] {
-      margin: 4.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x][class*="--marginx4.1-3.1x"] {
-        margin: 4.5% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x][class*="--marginx4.1-3.2x"] {
-        margin: 5% 3.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-3x][class*="--marginx4.1-3.3x"] {
-        margin: 5.5% 3.5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x] {
-      margin: 4.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x][class*="--marginx4.1-4.1x"] {
-        margin: 4.5% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x][class*="--marginx4.1-4.2x"] {
-        margin: 5% 4.5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.1x"][class*=--margin4x-4x][class*="--marginx4.1-4.3x"] {
-        margin: 5.5% 4.5%; }
-  ul[class^=ul] li[class^=li][class*="--marginx4.2x"] {
-    margin: 5%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x] {
-      margin: 5% 0%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x][class*="--marginx4.2-0.1x"] {
-        margin: 4.5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x][class*="--marginx4.2-0.2x"] {
-        margin: 5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-0x][class*="--marginx4.2-0.3x"] {
-        margin: 5.5% 1%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x] {
-      margin: 5% 1%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x][class*="--marginx4.2-1.1x"] {
-        margin: 4.5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x][class*="--marginx4.2-1.2x"] {
-        margin: 5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-1x][class*="--marginx4.2-1.3x"] {
-        margin: 5.5% 2%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x] {
-      margin: 5% 2%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x][class*="--marginx4.2-2.1x"] {
-        margin: 4.5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x][class*="--marginx4.2-2.2x"] {
-        margin: 5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-2x][class*="--marginx4.2-2.3x"] {
-        margin: 5.5% 3%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x] {
-      margin: 5% 3%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x][class*="--marginx4.2-3.1x"] {
-        margin: 4.5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x][class*="--marginx4.2-3.2x"] {
-        margin: 5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-3x][class*="--marginx4.2-3.3x"] {
-        margin: 5.5% 4%; }
-    ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x] {
-      margin: 5% 4%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x][class*="--marginx4.2-4.1x"] {
-        margin: 4.5% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x][class*="--marginx4.2-4.2x"] {
-        margin: 5% 5%; }
-      ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x][class*="--marginx4.2-4.3x"] {
-        margin: 5.5% 5%; }
-  ul[class^=ul] li[class^=li][class*=_dot] {
-    padding: 0 6%;
-    position: relative; }
-    ul[class^=ul] li[class^=li][class*=_dot]:after {
-      content: " ";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      top: 14%;
-      left: -23px;
-      border: 5px solid #287067;
-      border-radius: 50%;
-      background-color: #f5f5f5; }
-      @media only screen and (min-width: 550px) {
-        ul[class^=ul] li[class^=li][class*=_dot]:after {
-          left: -28px; } }
-      @media only screen and (min-width: 650px) {
-        ul[class^=ul] li[class^=li][class*=_dot]:after {
-          left: -24px; } }
-    ul[class^=ul] li[class^=li][class*=_dot][class*=--active]:after {
-      background-color: #287067; }
-    @media only screen and (min-width: 960px) {
-      ul[class^=ul] li[class^=li][class*=_dot] {
-        padding: 6%; }
-        ul[class^=ul] li[class^=li][class*=_dot] .description {
-          margin-top: 4%; } }
-  @media only screen and (min-width: 0) and (max-width: 960px) {
-    ul[class^=ul] li[class^=li] .description {
-      margin-top: 0%;
-      max-height: 0;
-      overflow-y: hidden;
-      transition-property: max-height, margin;
-      transition-duration: 0.75s;
-      transition-timing-function: ease-in-out; } }
-  ul[class^=ul] li[class^=li].active {
-    background-color: gainsboro;
-    box-shadow: 0px 3px 3px rgba(62, 62, 62, 0.4);
-    padding: 6%; }
-    ul[class^=ul] li[class^=li].active .description {
-      margin-top: 4%;
-      max-height: 1000px; }
-  ul[class^=ul] li[class^=li].active-color:after {
-    background-color: #287067; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x][class*="--marginx4.2-4.1x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x][class*="--marginx4.2-4.1x"] {
+          margin: 4.5% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x][class*="--marginx4.2-4.2x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x][class*="--marginx4.2-4.2x"] {
+          margin: 5% 5%; }
+        ul[class^=ul] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x][class*="--marginx4.2-4.3x"], ol[class^=ol] li[class^=li][class*="--marginx4.2x"][class*=--margin4x-4x][class*="--marginx4.2-4.3x"] {
+          margin: 5.5% 5%; }
+
+ul[class^=ul] li[class^=li][class*=_dot] {
+  padding: 0 6%;
+  position: relative; }
+  ul[class^=ul] li[class^=li][class*=_dot]:after {
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 14%;
+    left: -23px;
+    border: 5px solid var(--primary-color);
+    border-radius: 50%;
+    background-color: var(--background-ligth); }
+    @media only screen and (min-width: 550px) {
+      ul[class^=ul] li[class^=li][class*=_dot]:after {
+        left: -28px; } }
+    @media only screen and (min-width: 650px) {
+      ul[class^=ul] li[class^=li][class*=_dot]:after {
+        left: -24px; } }
+  ul[class^=ul] li[class^=li][class*=_dot][class*=--active]:after {
+    background-color: var(--primary-color); }
+  @media only screen and (min-width: 960px) {
+    ul[class^=ul] li[class^=li][class*=_dot] {
+      padding: 6%; }
+      ul[class^=ul] li[class^=li][class*=_dot] .description {
+        margin-top: 4%; } }
+@media only screen and (min-width: 0) and (max-width: 960px) {
+  ul[class^=ul] li[class^=li] .description {
+    margin-top: 0%;
+    max-height: 0;
+    overflow-y: hidden;
+    transition-property: max-height, margin;
+    transition-duration: 0.75s;
+    transition-timing-function: ease-in-out; } }
+ul[class^=ul] li[class^=li].active {
+  background-color: var(--background-ligth-darken);
+  box-shadow: 0px 3px 3px var(--shadow-color);
+  padding: 6%; }
+  ul[class^=ul] li[class^=li].active .description {
+    margin-top: 4%;
+    max-height: 1000px; }
+ul[class^=ul] li[class^=li].active-color:after {
+  background-color: var(--primary-color); }
+
+ol[class^=ol] > li[class^=li] {
+  list-style: decimal;
+  padding-left: 1%; }
+  ol[class^=ol] > li[class^=li]::marker {
+    color: var(--gray-ligth-font-color); }
 
 a[class^=link] {
   text-decoration: none;
-  color: #21d5be;
+  color: var(--action-color);
   position: relative; }
   a[class^=link]:after {
-    content: " ";
+    content: "";
     position: absolute;
-    background-color: #21d5be;
+    background-color: var(--action-color);
     width: 100%;
     height: 10%;
     left: 0%;
     bottom: 0; }
   a[class^=link]:visited {
-    color: #287067; }
+    color: var(--primary-color); }
     a[class^=link]:visited:after {
-      background-color: #287067; }
+      background-color: var(--primary-color); }
 
 .p {
   margin: 1% 0; }
@@ -4328,13 +4264,13 @@ a[class^=link] {
   cursor: pointer;
   outline: 0;
   margin: 2% 0;
-  box-shadow: 0px 3px 3px rgba(62, 62, 62, 0.4); }
+  box-shadow: 0px 3px 3px var(--shadow-color); }
   [class^="button"][class*="_action"] {
     color: white;
     position: relative;
     text-align: center;
     display: inline-block;
-    background-color: #21d5be;
+    background-color: var(--action-color);
     transition-property: background-color, box-shadow, transform, color;
     transition-duration: .75s;
     		/*
@@ -4371,14 +4307,14 @@ a[class^=link] {
     		}
     		*/ }
     [class^="button"][class*="_action"]:hover {
-      background-color: #30dfc9;
-      color: #595959;
-      box-shadow: 1px 5px 3px rgba(62, 62, 62, 0.4);
+      background-color: var(--action-color-ligthen);
+      color: var(--gray-font-color);
+      box-shadow: 1px 5px 3px var(--shadow-color);
       transform: scale(1.03); }
 
 header {
   width: 100%;
-  background-color: #C7C7C7;
+  background-color: var(--background);
   display: flex;
   align-items: center;
   justify-content: space-between; }
@@ -4398,7 +4334,7 @@ header {
     height: 60vw;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 7px 7px 7px rgba(62, 62, 62, 0.4), -7px -7px 7px rgba(62, 62, 62, 0.4);
+    box-shadow: 7px 7px 7px var(--shadow-color), -7px -7px 7px var(--shadow-color);
     max-width: 200px;
     max-height: 200px; }
     header .profile img {
@@ -4425,14 +4361,14 @@ header {
         width: 30%; } }
     header h1 .name {
       font-weight: 400;
-      color: #287067; }
+      color: var(--primary-color); }
     header h1 .job-title {
       font-weight: bold; }
   header .particle {
     position: absolute;
-    top: 48%;
-    left: 21%;
-    background-color: #868686;
+    top: 37%;
+    left: 19%;
+    background-color: #9d9d9d;
     width: 6px;
     height: 6px;
     border-radius: 50%; }
@@ -4457,7 +4393,7 @@ ul.contact {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #287067; }
+    color: var(--primary-color); }
     ul.contact li a i {
       margin-bottom: 10%;
       font-size: 3em; }
