@@ -15,5 +15,16 @@ function menu(e) {
 
 
 }
+function changeLanguage(target) {
+	const current = target.getAttribute("data-state");
+	const other = current === "spanish" ? "english" :"spanish";
+	const currentP = Array(...document.getElementsByClassName(`${current}_version`));
+	const otherP  = Array(...document.getElementsByClassName(`${other}_version`));
+	const actionsText = {"spanish": "Change language", "english": "Cambiar idioma"};
+	currentP.forEach(p => p.classList.add("hidden"));
+	otherP.forEach(p => p.classList.remove("hidden"));
+	target.setAttribute("data-state", other);
+	target.innerText = actionsText[other];
+}
 
-export {showDescription, menu}
+export {showDescription, menu, changeLanguage}

@@ -6,6 +6,7 @@
 	margin: 0;
 	padding: 0;
 	font-family: $font;
+	font-size: 12pt;
 	box-sizing: border-box;
 }
 
@@ -29,7 +30,7 @@ img {
 }
 body, .wrapp {
     background-color: $background-ligth;
-	background: $background-ligth no-repeat url("/media/background.jpg") fixed;
+	background: $background-ligth no-repeat url("../media/background.jpg") fixed;
 	overflow-x: hidden;
 	position:relative;
 	z-index: -2;
@@ -97,7 +98,7 @@ body, .wrapp {
 	}
 }
 
-ul[class^=ul] {
+%list {
 	@include margin(1%, 10, 3, 0.25);
 	&[class*=_border] {
 		@each $border in top, bottom, left, right, all {
@@ -123,7 +124,9 @@ ul[class^=ul] {
 		font-size: 12pt;
 		margin-top: inherit;
 	}
-	
+}
+ul[class^=ul] {
+	@extend %list;
 	li[class^=li] {
 		@include margin(1%, 5,3,0.5);
 		transition-property: background-color, padding, box-shadow;
@@ -180,6 +183,10 @@ ul[class^=ul] {
 	}
 }
 
+ol[class^=ol] {
+	@extend %list;
+}
+
 a[class^=link] {
 	text-decoration: none;
 	color: $action-color;
@@ -194,6 +201,69 @@ a[class^=link] {
 		bottom: 0;
 	}
 	&:visited { color: $primary-color; &:after {background-color: $primary-color;}}
+}
+
+.p {
+	margin: 1% 0;
+}
+
+[class^="button"] {
+	padding: 1% 2%;
+	border-radius: 0px;
+	border: none;
+	cursor: pointer;
+	outline: 0;
+	margin:2% 0;
+	box-shadow: $default-shadow;
+	&[class*="_action"] {
+		color: white;
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		background-color: $action-color;
+		transition-property: background-color, box-shadow, transform, color;
+		transition-duration: .75s;
+		&:hover {
+			background-color: lighten($action-color, 5%);
+			color: darken(white, 65%);
+			box-shadow: 1px 5px 3px $shadow-color;
+			transform:scale(1.03);
+		}
+
+		/*
+		&:after, &:before {
+			top: 0;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			display: block;
+			transition: .25s;
+		}
+		&:after {
+			opacity: 0;
+			transform: translateY(-50%) rotateX(90deg);
+			content: attr(data-back);
+			background-color: $action-color;
+
+		}
+		&:before {
+			opacity: 1;
+			content: attr(data-front);
+    		transform: translateY(0) rotateX(0);
+			background-color: $primary-color;
+		}
+		&:hover {
+			&:after {
+				opacity: 1;
+				transform: translateY(0) rotateX(0);
+			}
+			&:before {
+				opacity: 0;
+				transform: translateY(-50%) rotateX(90deg);
+			}
+		}
+		*/
+	}
 }
 
 @import './components/header';
