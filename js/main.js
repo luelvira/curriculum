@@ -1,11 +1,14 @@
 //import {createParticles } from './particle.js';
 import {showDescription, menu, changeLanguage } from './interactions.js';
 import {changeColor} from './crono.js';
+import {Gallery} from './gallery.js';
+
 window.onload = function() {
 	//createParticles(500);
 	const works = new Array(...document.getElementsByClassName("description-li"));
 	const menuCompact = document.getElementsByClassName("menu-compact")[0];
 	const quosButton = document.getElementById("changeLanguage");
+	const galleries = new Array(...document.getElementsByClassName("gallery"));
 	const callback = changeColor(works);
 	const menuItems = new Array(...document.getElementsByClassName("menu-uncompact-item"));
 	const validPaths = ["/", "/skills", "/works", "/contact"];
@@ -20,5 +23,7 @@ window.onload = function() {
 	}
 
 	quosButton.addEventListener("click",  (e) => changeLanguage(e.currentTarget));
+
+	galleries.forEach(g => new Gallery(g));
 
 }

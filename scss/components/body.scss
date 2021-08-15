@@ -1,3 +1,29 @@
+[class*=grid] {
+	display: grid;
+	grid-gap: 20px;
+}
+@for $i from 1 to 6 {
+	@each $q in s, m, l {
+		.grid-#{$i}#{$q} {
+			@if $q == "s" {
+				@include media(0, $tablet) {
+					grid-template-columns: repeat($i, 1fr);
+				}
+			}
+			@else if $q == "m" {
+				@include media($tablet, $desktop) {
+					grid-template-columns: repeat($i, 1fr);
+				}
+			}
+			@else if $q == "l" {
+				@include media($desktop) {
+					grid-template-columns: repeat($i, 1fr);
+				}
+			}
+
+		}
+	}
+}
 section {
 	width: 95%;
 	display:block;
@@ -20,10 +46,6 @@ section {
 		}
 		article.complete {
 			grid-column:1/-1;
-		}
-		&.section-grid-1-x {
-			display: grid;
-			grid-template-columns: 1fr;
 		}
 		&.section-grid-2-3 {
 			display:grid;
