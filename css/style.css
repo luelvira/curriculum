@@ -4382,7 +4382,8 @@ a[class^=link] {
       background-color: var(--primary-color); }
 
 .p {
-  margin: 1% 0; }
+  margin: 1% 0;
+  text-align: justify; }
 
 [class^="button"] {
   padding: 1% 2%;
@@ -4399,40 +4400,7 @@ a[class^=link] {
     display: inline-block;
     background-color: var(--action-color);
     transition-property: background-color, box-shadow, transform, color;
-    transition-duration: .75s;
-    		/*
-    		&:after, &:before {
-    			top: 0;
-    			left: 0;
-    			position: absolute;
-    			width: 100%;
-    			display: block;
-    			transition: .25s;
-    		}
-    		&:after {
-    			opacity: 0;
-    			transform: translateY(-50%) rotateX(90deg);
-    			content: attr(data-back);
-    			background-color: $action-color;
-    
-    		}
-    		&:before {
-    			opacity: 1;
-    			content: attr(data-front);
-        		transform: translateY(0) rotateX(0);
-    			background-color: $primary-color;
-    		}
-    		&:hover {
-    			&:after {
-    				opacity: 1;
-    				transform: translateY(0) rotateX(0);
-    			}
-    			&:before {
-    				opacity: 0;
-    				transform: translateY(-50%) rotateX(90deg);
-    			}
-    		}
-    		*/ }
+    transition-duration: .75s; }
     [class^="button"][class*="_action"]:hover {
       background-color: var(--action-color-ligthen);
       color: var(--gray-font-color);
@@ -4493,9 +4461,9 @@ header {
       font-weight: bold; }
   header .particle {
     position: absolute;
-    top: 6%;
-    left: 58%;
-    background-color: #cccccc;
+    top: 29%;
+    left: 49%;
+    background-color: #828282;
     width: 6px;
     height: 6px;
     border-radius: 50%; }

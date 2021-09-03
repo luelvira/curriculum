@@ -134,7 +134,7 @@
 					<h3 class="h3_bold--underline--center">Competencias</h3>
 					<p class="p">Las principales competencias que se buscaron desarrollar y que presentase la aplicación fueron las siguientes,
 					de forma que cualquier usuario puediese sentirse comodo empleando el sistema asemejandose tanto a un ordenador personal
-					como fuese posible</p>
+					como fuese posible.</p>
 					<ol class="ol">
 						<li class="li">Visualizar el escritorio</li>
 						<li class="li">Gestionar archivos</li>
@@ -179,11 +179,11 @@
 				<article class="">
 					<h3 class="h3_bold--underline--center--big">Marco espacio/temporal</h3>
 					<p class="p">El estudio se centra en el desarrollo de una propuesta de interacción inmersiva empleando tecnologías
-					web basadas en <a href="https://es.wikipedia.org/wiki/Realidad_virtual" target="_blank">realidad virtual</a> 
-					on el objeto de promover nuevas nuevas formas de interaccion y desarrollo de competencias de aprendizaje.
-					</p>
+					web basadas en
+					<a href="https://es.wikipedia.org/wiki/Realidad_virtual" target="_blank" class="link">realidad virtual</a> 
+					con el objeto de promover nuevas nuevas formas de interaccion y desarrollo de competencias de aprendizaje.</p>
 				</article>
-				<article class="">
+				<article> 
 					<h3 class="h3_bold--underline--center">Objetivos principales</h3>
 					<p class="p">Los requisitos del proyecto que me propuesieron fue:</p>
 					<p class="p">Se busca dar soporte al desarrollo de visualizaciones inmersivas
@@ -191,7 +191,7 @@
 					finananciado por el programa europeo H2020, cuyo objetivo es desarrollar
 					herramientas de divulgación y aprendizaje de concpetos relacionados con
 					la edición genética y en particular las nuevas técnicas de selección
-					vegetal llamadas New Plant Breeding Techniques. 
+					vegetal llamadas New Plant Breeding Techniques.
 					</p>
 				</article>
 				<article class="complete">
@@ -200,7 +200,7 @@
 					navegar y visualizar diferentes componentenes y elementos que le muestren información releavente acerca del tema
 					de estudio. Se realizó para ello un universo en el cual los marcos de información se representaban con esferas, denominadas
 					<i>bubbles</i> a las cuales se les ajustaba un tamaño y posición en función de su relevancia, así como la cantidad de información
-					que pudiese contener a su vez
+					que pudiese contener a su vez.
 					</p>
 					<p class="p">El principal reto al que me vi sometido para cumplir las espectativas de proyecto
 					fue tener que realizar la misma experiencia que funcionase tanto con el hardware de realizad virtual
@@ -208,9 +208,8 @@
 					de interacción que se requieren para cada dispositivo.</p>
 					<p class="p">Sin embargo, he de decir que haber podido trabajar en un proyecto como este, aprendiendo nuevas
 					tecnologías que de otra forma hubiesen sido inalcanzables como son el manejo de
-					las <a href="https://www.oculus.com/quest-2/" target="_blank">Oculus quest 2</a>
-					resultó una experiencia de lo más enriquecedora y apasionante
-					</p>
+					las <a href="https://www.oculus.com/quest-2/" target="_blank" class="link">Oculus quest 2</a>
+					resultó una experiencia de lo más enriquecedora y apasionante.</p>
 				</article>
 				<article>
 					<h3 class="h3_bold--underline--center">Competencias</h3>
@@ -251,6 +250,65 @@
 						<div><img src="media/immersive-bubble/ejemplo_menu.png" alt="Ejemplo de un menú contextual" data-description="En este caso, se ha escogido mostrar un menú contextual que ofrece la aplicación de forma que el usuario pueda realiar algunas acciones más avanzadas"></div>
 						<div><img src="media/immersive-bubble/ejemplo_documentacion.png" alt="ejempo de documentación" data-description="Uno de los componentes de la documentación generada por TSdoc"></div>
 					</div>
+				</article>
+			</section>
+			<section>
+				<h2 class="h2 complete">Sudoku resolver</h2>
+				<article>
+					<h3 class="h3_bold--underline--center--big">Marco espacio/temporal</h3>
+					<p class="p">El proyecto se basa en el estudio y desarrollo de la resolución de problemas
+					de búsqueda aplicados a un caso concreto, generando una interfaz lo suficientemente genérica
+					que pueda emplearse en la resolución de cualquier problema que deba resolverse de una manera similar.</p>
+				</article>
+				<article> 
+					<h3 class="h3_bold--underline--center">Objetivos principales</h3>
+					<p class="p">Cuando me propuse inicialmente realizar este proyecto,
+					tenía en mente aplicar los conocimientos adquiridos sobre heuristica y optimización.
+					Para ello, inicialmente se planteó resolver el problema con un
+					<a href="https://en.wikipedia.org/wiki/A*_search_algorithm" class="link" target="_blank">algoritmo de búsqueda A*</a>.</p>
+					<p class="p">Tras observar que la mejor heuristica planteada convirtió el problema en un
+					problema de <a href="https://www.geeksforgeeks.org/backtracking-introduction/" class="link" target="_blank">backtracking</a>
+					decidí cambiar la implementación a dicho algoritmo de forma que se podría resolver de una forma más
+					eficiente.</p>
+				</article>
+				<article class="complete">
+					<h3 class="h3_bold--underline--center">Descripción del proyecto</h3>
+					<p class="p">Para poder realizar algo que se diferenciase de las soluciones existentes
+					actuales quise plantearme el reto de asumir que cada paso tenía un coste muy elevado,
+					por lo que se pretendía que el programa tuviese que profundizar lo minimo posible y mantener una politica similar para los errores que cometiese.</p>
+					<p class="p"> Conseguir esto no fue trivial ya que había que "enseñar" al programa a resolver un sudoku como lo haría una persona, o al menos ese fue mi planteamiento.  Con este fin, se implementaron las siguientes variantes al algoritmo:</p>
+					<ul class="ul_1">
+						<li class="li">Búsqueda del único valor posible en una fila o columna:
+							<ul class="ul_2">
+								<li class="li">Algunas celdas podían tener varias opciones, sin embargo, observando la fila o la columna se veía cual es la única opción valida</li>
+							</ul>
+						</li>
+						<li class="li">Selección del único valor disponible en una celda.
+							<ul class="ul_2">
+								<li class="li">Este es el proceso más costoso ya que es necesario calcular todos los valores posibles de una celda y posteriormente ordenarlos en función del número de posibilidades que exista en esa celda.</li>
+								<li class="li">Gracias a ese proceso realizado en cada estado del sudoku se podía rellenar aquellas celdas que solo tuviesen una opción.</li>
+							</ul>
+						</li>
+						<li class="li">Selección de la mejor opción</li>
+						<ul class="ul_2">
+							<li class="li">Gracias a la búqueda y ordenación empleada en el paso anterior, todas las acciones posibles para la resolución del sudoku estan ordenadas de forma que siempre se escoja aquella que tenga menos opciónes.</li>
+							<li class="li">Con esta idea se persigue disminuir el número de fallos ya que aumenta la probabilidad de acertar el valor en la celda seleccionada y por ende es más facil que aparezcan celdas <i>triviales</i> que se resuelven en los pasos anteriores</li>
+						</ul>
+					</ul>
+					<p class="p">Se puede observar el proyecto completo en el github: <a href="/sudoku_resolver" class="link" target="_blank">sudoku resolver.</a></p>
+				</article>
+				<article>
+					<h3 class="h3_bold--underline--center">Competencias</h3>
+					<p class="p">Lo que se buscaba en el proyecto fue principalmente:</p>
+					<ol class="ol">
+						<li class="li">Profundizar en los algoritmos de búsqueda y optimización</li>
+						<li class="li">Desarrollar una librería que permita cambiar la definición de los estados y las acciones de forma sencilla pudiendo aplicar el desarrollo a cualquier problema</li>
+						<li class="li">Generar un programa capaz de resolver sudokus</li>
+					</ol>
+				</article>
+				<article>
+					<h3 class="h3_bold--underline--center">Tecnologías empleadas</h3>
+					<p class="p">El proyecto se desarrolló enteramente en python sin emplear librerias externas</p>
 				</article>
 			</section>
 		</main>

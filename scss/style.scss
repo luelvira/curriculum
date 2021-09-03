@@ -216,6 +216,7 @@ a[class^=link] {
 
 .p {
 	margin: 1% 0;
+	text-align: justify;
 }
 
 [class^="button"] {
@@ -240,40 +241,6 @@ a[class^=link] {
 			box-shadow: 1px 5px 3px $shadow-color;
 			transform:scale(1.03);
 		}
-
-		/*
-		&:after, &:before {
-			top: 0;
-			left: 0;
-			position: absolute;
-			width: 100%;
-			display: block;
-			transition: .25s;
-		}
-		&:after {
-			opacity: 0;
-			transform: translateY(-50%) rotateX(90deg);
-			content: attr(data-back);
-			background-color: $action-color;
-
-		}
-		&:before {
-			opacity: 1;
-			content: attr(data-front);
-    		transform: translateY(0) rotateX(0);
-			background-color: $primary-color;
-		}
-		&:hover {
-			&:after {
-				opacity: 1;
-				transform: translateY(0) rotateX(0);
-			}
-			&:before {
-				opacity: 0;
-				transform: translateY(-50%) rotateX(90deg);
-			}
-		}
-		*/
 	}
 }
 
