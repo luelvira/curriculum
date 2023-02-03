@@ -68,6 +68,9 @@ section {
 		}
 	}
 	@include media($desktop) {
-		max-width: 960px;
+		//max-width: 1080px;
+		max-width: none;
+		width: auto;
+		margin: 2% 10%;
 	}
 }

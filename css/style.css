@@ -205,7 +205,9 @@ section {
           grid-area: cell2-3; } }
   @media only screen and (min-width: 960px) {
     section {
-      max-width: 960px; } }
+      max-width: none;
+      width: auto;
+      margin: 2% 10%; } }
 
 .board {
   width: 100vw;
@@ -273,7 +275,6 @@ section {
   margin: 0;
   padding: 0;
   font-family: "Lato";
-  font-size: 12pt;
   box-sizing: border-box; }
 
 li {
@@ -303,6 +304,9 @@ img {
     width: 90%; }
   img.img-xxxl {
     width: 96%; }
+
+body {
+  font-size: 12pt; }
 
 body, .wrapp {
   background-color: var(--background-ligth);
@@ -4339,7 +4343,8 @@ ul[class^=ul] li[class^=li][class*=_dot] {
     ul[class^=ul] li[class^=li][class*=_dot] {
       padding: 6%; }
       ul[class^=ul] li[class^=li][class*=_dot] .description {
-        margin-top: 4%; } }
+        margin-top: 4%;
+        font-size: 1.2rem; } }
 @media only screen and (min-width: 0) and (max-width: 960px) {
   ul[class^=ul] li[class^=li] .description {
     margin-top: 0%;
@@ -4357,6 +4362,8 @@ ul[class^=ul] li[class^=li].active {
     max-height: 1000px; }
 ul[class^=ul] li[class^=li].active-color:after {
   background-color: var(--primary-color); }
+ul[class^=ul] li[class^=li].multiperiod .description {
+  margin-bottom: 4%; }
 
 ol[class^=ol] > li[class^=li] {
   list-style: decimal;
@@ -4461,9 +4468,9 @@ header {
       font-weight: bold; }
   header .particle {
     position: absolute;
-    top: 29%;
-    left: 49%;
-    background-color: #828282;
+    top: 68%;
+    left: 73%;
+    background-color: #3f3f3f;
     width: 6px;
     height: 6px;
     border-radius: 50%; }
